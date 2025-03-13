@@ -1,0 +1,354 @@
+@import url("https://fonts.googleapis.com/css2?family=WindSong:wght@400;500&display=swap"); /* title font: "Windsong" */
+
+
+/* body */
+
+body {
+    background-color: rgb(255, 226, 215);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.5vw;
+    margin: auto;
+    width: 60%;
+}
+
+h1 {
+    font-size: 200%;
+    margin-top: 0vh;
+}
+
+h2 {
+    font-size: 150%;
+}
+
+section > section {
+    margin: 0 2.5vw;
+}
+
+.center {
+    text-align: center;
+}
+
+.columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.left-column {
+    flex: 2 2 200px;
+}
+
+.right-column {
+    flex: 3 3 300px;
+    text-align: center;
+}
+
+.right-column ul {
+    margin-left: 5vw;
+    text-align: left;
+    /*list-style: disc outside url(../images/lips.png); FIX*/
+}
+
+.description {
+    color: coral;
+    font-size: 110%;
+    text-align: center;
+}
+
+.products {
+    color: maroon;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+
+/* header */
+
+.title {
+    font-family: "WindSong", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 400;
+    margin: 0;
+}
+
+.title1 {
+    color: rgb(50, 0, 0);
+    font-size: 6vw;
+    position: absolute;
+    right: 15%;
+    top: 10%;
+    width: 100%;
+}
+
+.title2 {
+    font-size: 8vw;
+    left: 12%;
+    position: absolute;
+    top: 25%;
+    width: 100%;
+}
+
+.title3 {
+    font-size: 8vw;
+    position: absolute;
+    right: 21%;
+    top: 31%;
+    width: 100%;
+}
+
+.title-container {
+    position: relative;
+    text-align: center;
+}
+
+.title-container img {
+    opacity: 0.3;
+    width: 45%;
+}
+
+.subtitle {
+    color: maroon;
+    font-family: 'Arial Narrow', sans-serif;
+    left: 25%;
+    position: absolute;
+    top: 60%;
+    width: 100%;
+}
+
+
+/* disclaimer section */
+
+.disclaimer {
+    font-size: 60%;
+    margin: 0 1vw 1vh 1vw;
+    position: sticky;     /* trying to get to stick above the footer at the bottom of the page, but only if there's not enough content to fill the page */
+    bottom: -5vh;
+}
+
+
+/* footer */
+
+footer {
+    background-color: maroon;
+    bottom: 0;
+    padding: 1vh 2.5vw 1vh 2.5vw;
+    position: fixed;
+    width: 60%;
+}
+
+.socials {
+    display: inline-block;
+    width: 32%;
+}
+
+.socials a {
+    color: maroon;
+}
+
+.socials button {
+    background: maroon;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    color: rgb(255, 228, 193);
+    font-family: sans-serif;
+    font-size: small;
+    font-weight: 100;
+    margin: 0;
+    margin-right: 2.5vw;
+    padding: 0;
+    min-width: 5%;
+    vertical-align: bottom;
+}
+
+.navigation {
+    color: rgb(255, 228, 193);
+    display: inline-block;
+    text-align: right;
+    font-size: 1vw;
+    width: 66%;
+    vertical-align: middle;
+}
+
+nav a {
+    color: rgb(255, 228, 193);
+    margin-right: 2.5vw;
+}
+
+nav a:hover {
+    color: coral;
+    margin-right: 2.5vw;
+}
+
+
+/* lines */
+
+fieldset {
+    border: solid 2px tan;
+    border-radius: 1vw;
+    margin-bottom: 1vh;
+    padding: 1vh 2.5vw 1vh 2.5vw;
+}
+
+hr {
+    border-color: tan;
+}
+
+legend {
+    color: maroon;
+    font-family: "WindSong", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 180%;
+    font-weight: 500;
+}
+
+.subdescription {
+    border: 5px brown;
+    border-style: outset;
+    border-radius: 5vw;
+}
+
+
+/* buttons */
+
+button {
+    background: brown;
+    border: outset 1px darkred;
+    border-radius: 100px;
+    box-shadow: 0 15px 20px rgba(165, 42, 42, 0.5);
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: larger;
+    font-weight: 100;
+    margin: 2.5vw;
+    padding: 2.5vw;
+    min-width: 50%;
+}
+
+button:hover {
+    background: brown;
+    border: outset 1px darkred;
+    border-radius: 100px;
+    box-shadow: 0 15px 20px rgba(165, 42, 42, 0.6);
+    color: coral;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: larger;
+    font-weight: 100;
+    margin: 2.5vw;
+    padding: 2.5vw;
+    min-width: 50%;
+}
+
+
+/* offers */
+
+.offer {
+    background-color: rgb(255, 228, 193);
+    border: 5px dotted coral;
+    color: brown;
+    padding: 1vh 2.5vw 1vh 2.5vw;
+    text-align: center;
+    font-weight: bold;
+}
+
+.offer-hide {
+    color: rgb(255, 228, 193);
+}
+
+.offer p:nth-of-type(1) {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 120%;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.offer p:nth-of-type(2) {
+    font-family: "WindSong", 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 500;
+    font-size: 2vw;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* phone compatibility */
+
+@media screen and (max-width: 768px) {
+
+
+    /* body */
+   
+    body {
+     width: 90%;
+    }
+
+    .left-column {
+        display: inline-block;
+        text-align: left;
+        vertical-align: top;
+        width: 40vw;
+    }
+
+    .right-column {
+        display: inline-block;
+        text-align: center;
+        width: 40vw;
+    }
+    
+    .right-column ul {
+        margin-left: 5vw;
+    }
+
+
+    /* header */
+    
+    .title {
+        font-family: "WindSong", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: 400;
+        margin: 0;
+    }
+    
+    .title1 {
+        font-size: 9vw;
+        position: absolute;
+        right: 15%;
+        top: 9%;
+        width: 100%;
+    }
+    
+    .title2 {
+        font-size: 11vw;
+        left: 11%;
+        position: absolute;
+        top: 25%;
+        width: 100%;
+    }
+    
+    .title3 {
+        font-size: 11vw;
+        position: absolute;
+        right: 19.5%;
+        top: 31%;
+        width: 100%;
+    }
+    
+    .title-container {
+        position: relative;
+        text-align: center;
+    }
+    
+    .title-container img {
+        opacity: 0.3;
+        width: 45%;
+    }
+
+    .subtitle {
+        color: maroon;
+        font-family: 'Arial Narrow', sans-serif;
+        left: 25%;
+        position: absolute;
+        top: 60%;
+        width: 100%;
+    }
+
+}
+
