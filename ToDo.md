@@ -11,5 +11,5 @@ Write `README.md` Credits section about Marcel.
 
 Write `README.md` How to... section.
 
-`list-style-image` is not co-operating - figure it out.
+`styles.css` `line 50` `list-style-image` is not co-operating - figure it out.
 
