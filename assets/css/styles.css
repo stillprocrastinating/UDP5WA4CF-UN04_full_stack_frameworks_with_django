@@ -18,6 +18,9 @@ h1 {
 
 h2 {
     font-size: 150%;
+    color: maroon;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: uppercase;
 }
 
 section > section {
@@ -54,12 +57,6 @@ section > section {
     color: coral;
     font-size: 110%;
     text-align: center;
-}
-
-.products {
-    color: maroon;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-transform: uppercase;
 }
 
 
@@ -113,6 +110,7 @@ section > section {
     position: absolute;
     top: 60%;
     width: 100%;
+    text-transform: initial;
 }
 
 
