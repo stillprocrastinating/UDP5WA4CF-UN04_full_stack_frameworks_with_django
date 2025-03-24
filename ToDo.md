@@ -1,15 +1,16 @@
 # To Do
 
-Add Homepage link to footer (once the homepage exists ;P haha).
+- `prp.html` Add Homepage link to footer (once the homepage exists ;P haha).
 ```html
 <a href="index.html" rel="tag" title="Homepage">
     Return to Homepage
 </a>
 ```
 
-Write `README.md` Credits section about Marcel.
+- `README.md` Add Credits section about Marcel.
 
-Write `README.md` How to... section.
+- `README.md` Add How to... section.
 
-`styles.css` `line 50` `list-style-image` is not co-operating - figure it out.
+- `styles.css` `line 50` `list-style-image` is not co-operating - figure it out.
 
+- `index.html` Add deployment functionality.
