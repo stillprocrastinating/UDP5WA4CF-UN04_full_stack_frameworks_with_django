@@ -19,7 +19,7 @@ body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 20px;
     width: 90%;
-    margin: auto;
+    margin: 0 5%;
 }
 
 
@@ -50,6 +50,7 @@ body {
     right: 40px;
     top: 22px;
     width: 100%;
+    display: inline-block;
 }
 
 .title2 {
@@ -58,6 +59,7 @@ body {
     position: absolute;
     top: 60px;
     width: 100%;
+    display: inline-block;
 }
 
 .title3 {
@@ -66,6 +68,7 @@ body {
     right: 100px;
     top: 60px;
     width: 100%;
+    display: inline-block;
 }
 
 .subtitle {
@@ -77,4 +80,59 @@ body {
     width: 100%;
     text-transform: initial;
     font-size: 75%;
+    display: inline-block;
+}
+
+
+/* responsive design */
+
+@media screen and (min-width: 768px) {
+    /* set defaults */
+
+    body {
+        font-size: 20px;
+        width: 80%;
+        margin: 0 10%;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    /* set defaults */
+
+    body {
+        font-size: 25px;
+        width: 60%;
+        margin: 0 20%;
+    }
+
+
+    /* header */
+
+    .title-container img {
+        width: 400px;
+    }
+
+    .title1 {
+        font-size: 250%;
+        right: 60px;
+        top: 30px;
+    }
+
+    .title2 {
+        font-size: 280%;
+        left: 40px;
+        top: 90px;
+    }
+
+    .title3 {
+        font-size: 300%;
+        right: 130px;
+        top: 90px;
+    }
+
+    .subtitle {
+        left: 50px;
+        top: 200px;
+        font-size: 75%;
+    }
 }
