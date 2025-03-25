@@ -20,6 +20,7 @@ body {
     font-size: 20px;
     width: 90%;
     margin: 0 5%;
+    text-align: center;
 }
 
 
@@ -81,6 +82,21 @@ body {
     text-transform: initial;
     font-size: 75%;
     display: inline-block;
+}
+
+
+/* body */
+
+h1 {
+    font-size: 200%;
+    margin-top: 0;
+}
+
+h2 {
+    font-size: 150%;
+    color: maroon;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: uppercase;
 }
 
 

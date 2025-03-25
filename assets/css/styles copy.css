@@ -185,7 +185,7 @@ legend {
 }
 
 .offer-hide {
-    color: rgb(255, 228, 193);
+    color: rgb(255, 228, 193); /* try using letter-spacing */
 }
 
 .offer p:nth-of-type(1) {
