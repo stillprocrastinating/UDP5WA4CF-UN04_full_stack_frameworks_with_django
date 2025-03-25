@@ -104,6 +104,17 @@ ul {
     margin-left: 25px;
 }
 
+a {
+    color: maroon;
+    font-size: 90%;
+    display: inline-block;
+    margin: 0 5px 10px;
+}
+
+a:hover {
+    color: coral;
+}
+
 
 /* special selectors */
 
@@ -195,6 +206,11 @@ legend {
     text-align: left;
 }
 
+h2 a {
+    text-decoration: none;
+    font-size: 100%;
+}
+
 
 /* footer */
 
@@ -226,10 +242,6 @@ footer a {
     text-align: center;
     font-size: 75%;
     flex-grow: 2;
-}
-
-footer a:hover {
-    color: coral;
 }
 
 footer button {
