@@ -286,11 +286,11 @@ footer button:hover path {
     }
     
     .left-column {
-        flex: 2 2 200px;
+        flex: 2 2 250px;
     }
     
     .right-column {
-        flex: 3 3 300px;
+        flex: 3 3 250px;
         text-align: center;
     }
 
@@ -298,7 +298,8 @@ footer button:hover path {
     /* special selectors */
     
     .right-column ul {
-        margin-left: 25px;
+        width: auto;
+        margin-left: 50px;
         text-align: left;
     }
 
@@ -372,5 +373,9 @@ footer button:hover path {
     
     footer {
         width: 60%;
+    }
+
+    .footer-offset {
+        margin-bottom: 70px;
     }
 }
