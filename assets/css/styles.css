@@ -100,6 +100,90 @@ h2 {
 }
 
 
+/* special selectors */
+
+.right-column ul {
+    list-style: disc outside url(../favicon/favicon-16x16.png);
+    width: 220px;
+    margin-left: 20%;
+}
+
+.description {
+    color: coral;
+    font-size: 110%;
+}
+
+button {
+    background: maroon;
+    border: outset 1px darkred;
+    border-radius: 100px;
+    box-shadow: 0 15px 20px rgba(165, 42, 42, 0.5);
+    color: rgb(255, 228, 193);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: larger;
+    font-weight: 100;
+    margin: 25px;
+    padding: 25px;
+    min-width: 50%;
+}
+
+fieldset {
+    border: solid 2px tan;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 10px 25px;
+}
+
+hr {
+    border-color: tan;
+}
+
+legend {
+    color: maroon;
+    font-family: "WindSong", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 180%;
+    font-weight: 400;
+}
+
+.subdescription {
+    border: 5px brown;
+    border-style: outset;
+    border-radius: 25px;
+}
+
+.offer {
+    background-color: rgb(255, 228, 193);
+    border: 5px dotted coral;
+    color: brown;
+    padding: 10px 25px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.offer p:nth-of-type(1) {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 120%;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.offer p:nth-of-type(2) {
+    font-family: "WindSong", 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    word-spacing: 10px;
+}
+
+.disclaimer {
+    font-size: 60%;
+    font-weight: 100;
+    margin: 0 5px;
+    bottom: -25px;
+    text-align: left;
+}
+
+
 /* responsive design */
 
 @media screen and (min-width: 768px) {

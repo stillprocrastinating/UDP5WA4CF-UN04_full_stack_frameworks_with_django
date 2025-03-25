@@ -11,6 +11,4 @@
 
 - `README.md` Add How to... section.
 
-- `styles.css` `line 50` `list-style-image` is not co-operating - figure it out.
-
 - `index.html` Add deployment functionality.
