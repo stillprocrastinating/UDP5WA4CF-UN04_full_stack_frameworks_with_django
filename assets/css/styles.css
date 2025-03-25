@@ -166,9 +166,8 @@ legend {
     font-weight: 400;
 }
 
-.subdescription {
-    border: 5px darkred;
-    border-style: outset;
+.subdescription, iframe {
+    border: 5px outset darkred;
     border-radius: 25px;
     margin-top: 5px;
 }
@@ -209,6 +208,15 @@ legend {
 h2 a {
     text-decoration: none;
     font-size: 100%;
+}
+
+.maps {
+    text-align: center;
+}
+
+iframe {
+    width: 90%;
+    height: 50vh;
 }
 
 
