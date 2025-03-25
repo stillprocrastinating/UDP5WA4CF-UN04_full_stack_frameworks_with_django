@@ -189,6 +189,61 @@ legend {
 }
 
 
+/* footer */
+
+footer {
+    background-color: maroon;
+    bottom: 0;
+    position: fixed;
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.socials {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.nav {
+    flex-basis: 50%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+footer a {
+    color: rgb(255, 228, 193);
+    margin: 5px 5px 10px;
+    text-align: center;
+    font-size: 75%;
+    flex-grow: 2;
+}
+
+footer a:hover {
+    color: coral;
+}
+
+footer button {
+    background-color: #00000000;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+    margin: 15px 5px 5px;
+    font-size: normal;
+}
+
+footer path {
+    fill: rgb(255, 228, 193);
+}
+
+footer button:hover path {
+    fill: coral;
+}
+
+
 /* responsive design */
 
 @media screen and (min-width: 768px) {
