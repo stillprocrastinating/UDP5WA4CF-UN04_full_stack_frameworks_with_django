@@ -235,6 +235,10 @@ footer button {
     font-size: normal;
 }
 
+footer button:hover {
+    box-shadow: none;
+}
+
 footer path {
     fill: rgb(255, 228, 193);
 }
