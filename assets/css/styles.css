@@ -290,6 +290,30 @@ footer button:hover path {
         margin-left: 25px;
         text-align: left;
     }
+
+
+    /* footer */
+    
+    footer {
+        width: 80%;
+    }
+
+    footer a {
+        margin: 10px 10px 5px;
+        font-size: 80%;
+    }
+
+    footer button {
+        margin: 10px;
+    }
+
+    .socials {
+        flex-basis: 33%;
+    }
+
+    .nav {
+        flex-basis: 66%;
+    }
 }
 
 @media screen and (min-width: 992px) {
@@ -330,5 +354,12 @@ footer button:hover path {
         left: 50px;
         top: 200px;
         font-size: 75%;
+    }
+
+
+    /* footer */
+    
+    footer {
+        width: 60%;
     }
 }
