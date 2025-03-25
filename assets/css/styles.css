@@ -109,6 +109,34 @@ h2 {
         font-size: 20px;
         width: 80%;
         margin: 0 10%;
+        text-align: left;
+    }
+
+
+    /* body */
+
+    section > section {
+        margin: 0 25px;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    .columns {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    .left-column {
+        flex: 2 2 200px;
+    }
+    
+    .right-column {
+        flex: 3 3 300px;
+        text-align: center;
     }
 }
 
