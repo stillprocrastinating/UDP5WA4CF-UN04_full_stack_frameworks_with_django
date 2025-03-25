@@ -89,7 +89,6 @@ body {
 
 h1 {
     font-size: 200%;
-    margin-top: 0;
 }
 
 h2 {
@@ -97,6 +96,7 @@ h2 {
     color: maroon;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-transform: uppercase;
+    margin: 10px;
 }
 
 
@@ -141,6 +141,7 @@ fieldset {
 
 hr {
     border-color: tan;
+    margin: 5px 0;
 }
 
 legend {
@@ -151,9 +152,10 @@ legend {
 }
 
 .subdescription {
-    border: 5px brown;
+    border: 5px darkred;
     border-style: outset;
     border-radius: 25px;
+    margin-top: 5px;
 }
 
 .offer {
@@ -163,6 +165,7 @@ legend {
     padding: 10px 25px;
     text-align: center;
     font-weight: bold;
+    margin-top: 5px;
 }
 
 .offer p:nth-of-type(1) {
@@ -245,6 +248,10 @@ footer path {
 
 footer button:hover path {
     fill: coral;
+}
+
+.footer-offset {
+    margin-bottom: 65px;
 }
 
 
