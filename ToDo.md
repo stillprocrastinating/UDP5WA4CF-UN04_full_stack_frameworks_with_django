@@ -14,3 +14,5 @@
 - `index.html` Add deployment functionality.
 
 - `products.html` Add .footer-offset responsive design fix.
+
+- `.html` Fix footer .socials link title.
