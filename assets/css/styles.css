@@ -127,6 +127,11 @@ button {
     min-width: 50%;
 }
 
+button:hover {
+    box-shadow: 0 15px 20px rgba(165, 42, 42, 0.6);
+    color: coral;
+}
+
 fieldset {
     border: solid 2px tan;
     border-radius: 10px;
