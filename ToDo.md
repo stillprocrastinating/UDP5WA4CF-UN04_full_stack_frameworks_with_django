@@ -13,3 +13,5 @@
 - `review.html` Add ability to review with a star rating out of 5 with comments.
 
 - `index.html` Show most recent 5-star reviews.
+
+- [Code Institute video play animation](https://codeinstitute.net/uk-funded-cohorts/?_gl=1*1pxw6p0*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjwtpLABhC7ARIsALBOCVq56lNiv2scj6qaeremtF7RlVAM7nC8KhETtY10B9TRFx4k-n1gx6UaAurfEALw_wcB#:~:text=an%20AI%20developer.-,TESTIMONIALS,-Why%20career%20changers) - cool play button animation - steal (and credit) it ;P
