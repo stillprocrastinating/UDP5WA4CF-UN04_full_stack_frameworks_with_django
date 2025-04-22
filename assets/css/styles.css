@@ -113,6 +113,7 @@ a {
 
 a:hover {
     color: coral;
+    transition: 1s;
 }
 
 
@@ -272,6 +273,7 @@ footer path {
 
 footer button:hover path {
     fill: coral;
+    transition: 1s;
 }
 
 .footer-offset {
