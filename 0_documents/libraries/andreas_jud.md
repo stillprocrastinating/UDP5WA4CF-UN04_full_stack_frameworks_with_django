@@ -2,6 +2,8 @@
 
 I decided to follow Andreas Juds' Django startup tutorial, so that I could then follow his Stripe tutorial later on, as the Code Institute lessons are outdated.
 
+timestamp = 11:10
+
 
 # https://youtu.be/xQUCk_i0htE?si=eV-qWxrIuJ8yq2hQ&t=613
 

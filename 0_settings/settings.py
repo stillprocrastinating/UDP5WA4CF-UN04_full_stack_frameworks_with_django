@@ -28,7 +28,9 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "secret")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG", False)
 
-ALLOWED_HOSTS = [".herokuapp.com", "https://fireship.dev/amiresponsive",]
+ALLOWED_HOSTS = [
+    "127.0.0.1", ".herokuapp.com", "https://fireship.dev/amiresponsive",
+]
 
 
 # Application definition
@@ -58,7 +60,7 @@ ROOT_URLCONF = '0_settings.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / "templates"],
+        'DIRS': [BASE_DIR / "0_templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -119,6 +121,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [BASE_DIR / '0_static']
 
 
 # Email
