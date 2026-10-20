@@ -1,5 +1,7 @@
 .venv
+.vscode
 __pycache__
 0_documents/gitignore
+db.sqlite3
 env.py
 fixtures
