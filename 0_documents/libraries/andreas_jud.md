@@ -2,7 +2,13 @@
 
 I decided to follow Andreas Juds' Django startup tutorial, so that I could then follow his Stripe tutorial later on, as the Code Institute lessons are outdated.
 
-timestamp = 11:10
+```
+href="{{ request.META.HTTP_REFERER }}"
+```
+
+Wow, this would've been easier, if I knew about it, than the [JavaScript version](https://github.com/stillprocrastinating/UDP5WA4CF-UN03_back_end_development/blob/main/0_static/js/script.js#L168) I implemented in my [milestone 3 project](https://github.com/stillprocrastinating/UDP5WA4CF-UN03_back_end_development/tree/main).
+
+timestamp = 39:45
 
 
 # https://youtu.be/xQUCk_i0htE?si=eV-qWxrIuJ8yq2hQ&t=613
