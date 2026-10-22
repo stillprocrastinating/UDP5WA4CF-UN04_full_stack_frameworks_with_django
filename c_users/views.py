@@ -77,7 +77,7 @@ def profile_email_change(request):
             messages.warning(request, 'Form not valid')
             return redirect('profile-settings')
 
-    return redirect('shows')
+    return redirect('home')
 
 
 @login_required
@@ -97,6 +97,6 @@ def profile_delete_view(request):
         logout(request)
         user.delete()
         messages.success(request, 'Account deleted')
-        return redirect('shows')
+        return redirect('home')
 
     return render(request, 'c_users/profile_delete.html')

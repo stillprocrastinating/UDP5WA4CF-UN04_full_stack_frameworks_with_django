@@ -10,7 +10,7 @@ href="{{ request.META.HTTP_REFERER }}"
 Wow, this would've been easier, if I knew about it, than the [JavaScript version](https://github.com/stillprocrastinating/UDP5WA4CF-UN03_back_end_development/blob/main/0_static/js/script.js#L168) I implemented in my [milestone 3 project](https://github.com/stillprocrastinating/UDP5WA4CF-UN03_back_end_development/tree/main).
 
 
-# [Stripe tutorial](https://youtu.be/xQUCk_i0htE?si=eV-qWxrIuJ8yq2hQ&t=613)
+# [Stripe tutorial](https://www.youtube.com/watch?v=IzxNNWjYsPk&list=PL5E1F5cTSTtRwWj43zbcl5d-e2c1f1M9q)
 
 ```
 return redirect(f'{settings.BASE_URL}{reverse("new_page")}?next={request.get_full_path()}')
