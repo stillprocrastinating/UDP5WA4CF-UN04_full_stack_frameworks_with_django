@@ -24,3 +24,6 @@ a_stripe = shows
 products = showtime
 ...
 subscribe = lessons
+
+
+timestamp = 15:15

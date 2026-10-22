@@ -1,0 +1,22 @@
+{% extends 'layouts/blank.html' %}
+
+{% block head_title %} | £££{% endblock %}
+
+{% block content %}
+
+<div class="max-w-4xl mx-auto px-8 py-24 text-center">
+    <h1>
+        Thanks for your order {{ customer.name }}!
+    </h1>
+    <p class="my-10 text-gray-500">
+        The payment was successful
+    </p>
+    <a class="button" href="https://www.youtube.com/watch?v=ErB3UzAdql8" target="_blank">
+        Showtime 2026 video
+    </a>
+    <a class="button" href="{% url 'home' %}">
+        Back to Home
+    </a>
+</div>
+
+{% endblock %}
