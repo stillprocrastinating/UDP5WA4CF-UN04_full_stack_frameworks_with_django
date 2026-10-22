@@ -12,3 +12,9 @@
 - Subscription to lessons; tiers = classes.
 - Validation on payments to prevent multiple subscriptions to the same class with the same student. GDPR: student_1, student_2... <!-- initials? -->
 - One-off payments for lessons & show tickets, validated by date. Multiple payments possible after a warning confirmation.
+
+
+## Installs
+
+`pip freeze > requirements.txt`
+`pip install -r requirements.txt`

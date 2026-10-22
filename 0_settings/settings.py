@@ -165,6 +165,6 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 ACCOUNT_LOGIN_METHODS = {'email'}
 ACCOUNT_SIGNUP_FIELDS = ['email*', 'username*', 'password1*', 'password2*']
 
-# deprecated
-# ACCOUNT_AUTHENTICATION_METHOD = 'email'     # default = 'username'
-# ACCOUNT_EMAIL_REQUIRED = True
+# Stripe
+
+STRIPE_SECRET_KEY = os.environ.get("STRIPE_SECRET_KEY", "secret")
