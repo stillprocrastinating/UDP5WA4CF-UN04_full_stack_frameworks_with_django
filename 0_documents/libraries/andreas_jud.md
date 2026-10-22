@@ -17,3 +17,10 @@ return redirect(f'{settings.BASE_URL}{reverse("new_page")}?next={request.get_ful
 ```
 
 This code renders the redirect to a new page (for example, a login page) then redirects back to the original page for seamless user interface experience. Again, something I wanted for my [milestone 3 project](https://github.com/stillprocrastinating/UDP5WA4CF-UN03_back_end_development/tree/main).
+
+### note
+
+a_stripe = shows
+products = showtime
+...
+subscribe = lessons

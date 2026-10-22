@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'django_cleanup.apps.CleanupConfig',
     'django_htmx',
     'home',
+    'shows',
 ]
 
 MIDDLEWARE = [
