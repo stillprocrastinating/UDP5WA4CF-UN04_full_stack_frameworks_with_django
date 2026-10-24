@@ -7,10 +7,14 @@
 </h1>
 
 <div class="text-center flex flex-col items-center">
-    <img id="avatar" class="w-36 h-36 rounded-full object-cover my-4" src="{{ user.profile.avatar }}" />
+    <img alt="{{ user.username }} avatar" class="w-36 h-36 rounded-full object-cover my-4" id="avatar" src="{{ user.profile.avatar }}">
     <div class="text-center max-w-md">
-        <h1 id="displayname">{{ user.profile.displayname|default:"" }}</h1>
-        <div class="text-gray-400 mb-2 -mt-3">@{{ user.username }}</div>
+        <h1 id="displayname">
+            {{ user.profile.displayname|default:"" }}
+        </h1>
+        <div class="text-gray-400 mb-2 -mt-3">
+            @{{ user.username }}
+        </div>
     </div>
 </div>
 <form method="POST" enctype="multipart/form-data">
@@ -29,9 +33,6 @@
         </a>
     {% endif %}
 </form>
-
-
-
 
 <script>
     
