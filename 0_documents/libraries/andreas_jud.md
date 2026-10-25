@@ -22,8 +22,9 @@ This code renders the redirect to a new page (for example, a login page) then re
 
 a_stripe = shows
 products = showtime
+UserPayment = StripeOnePayment
 ...
 subscribe = lessons
 
 
-timestamp = 15:15
+timestamp = 18:19

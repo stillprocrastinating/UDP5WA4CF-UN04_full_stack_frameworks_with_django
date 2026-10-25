@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.shortcuts import redirect, render
 from django.urls import reverse
+from .models import StripeOnePayment
 import stripe
 
 
@@ -49,7 +50,28 @@ def showtime_view(request):
 
 
 def payment_successful(request):
-    return render(request, 'shows/payment_successful.html')
+    checkout_session_id = request.GET.get('session_id', None)
+    if checkout_session_id:
+        session = stripe.checkout.Session.retrieve(checkout_session_id)
+        customer_id = session.customer
+        customer = stripe.Customer.retrieve(customer_id)
+
+        line_item = stripe.checkout.Session.list_line_items(checkout_session_id).data[0]
+        StripeOnePayment.objects.get_or_create(
+            user=request.user,
+            stripe_customer_id=customer_id,
+            stripe_checkout_id=checkout_session_id,
+            stripe_product_id=line_item.price.product,
+            product_name=line_item.description,
+            quantity=line_item.quantity,
+            price=line_item.price.unit_amount / 100,
+            currency=line_item.price.currency,
+            has_paid=True
+        )
+
+    return render(
+        request, 'shows/payment_successful.html', {'customer': customer}
+    )
 
 
 def payment_cancelled(request):
