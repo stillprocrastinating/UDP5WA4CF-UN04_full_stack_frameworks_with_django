@@ -1,6 +1,8 @@
 from django.conf import settings
 from django.shortcuts import redirect, render
 from django.urls import reverse
+from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.http import require_POST
 from .models import StripeOnePayment
 import stripe
 
@@ -76,3 +78,14 @@ def payment_successful(request):
 
 def payment_cancelled(request):
     return render(request, 'shows/payment_cancelled.html')
+
+
+@require_POST
+@csrf_exempt
+def stripe_webhook(request):
+    endpoint_secret = settings.STRIPE_WEBHOOK_SECRET
+    e = stripe.Webhook.construct_event(
+        payload,     # JSON data
+        signature_header,     # stripe origin verification
+        endpoint_secret,     # stripe key
+    )

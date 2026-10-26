@@ -170,3 +170,4 @@ ACCOUNT_SIGNUP_FIELDS = ['email*', 'username*', 'password1*', 'password2*']
 # Stripe
 
 STRIPE_SECRET_KEY = os.environ.get("STRIPE_SECRET_KEY", "secret")
+# STRIPE_WEBHOOK_SECRET = os.environ.get("STRIPE_WEBHOOK_SECRET", "webhook")
