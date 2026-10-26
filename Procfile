@@ -1,1 +1,1 @@
-web: gunicorn un04-full-stack-frameworks.wsgi
+web: gunicorn un04-full-stack-frameworks.wsgi --preload
