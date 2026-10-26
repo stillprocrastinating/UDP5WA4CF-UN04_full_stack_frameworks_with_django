@@ -1,1 +1,1 @@
-gunicorn un04-full-stack-frameworks:application --preload
+web: gunicorn un04-full-stack-frameworks:application --preload
