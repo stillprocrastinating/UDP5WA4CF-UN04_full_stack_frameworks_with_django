@@ -5,6 +5,7 @@ from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
 from .models import StripeOnePayment
+from .utils import get_product_details
 import stripe
 
 
@@ -12,44 +13,23 @@ stripe.api_key = settings.STRIPE_SECRET_KEY
 
 
 def shows_view(request):
-    return render(request, 'shows/shows.html')
+    products_list = stripe.Product.list()
+    products = []
+
+    for product in products_list['data']:
+        # if product.get('metadata', {}).get('category') == "show_recording":     # .get() AttributeError: dict
+        if product['metadata']['category'] == "show_recording":
+            products.append(get_product_details(product))
+
+    return render(request, 'shows/shows.html', {'products': products})
 
 
-def showtime_view(request):
+def showtime_view(request, product_id):
 
-    product_id = 'prod_VUQYxR4lNOuWJY'
     product = stripe.Product.retrieve(product_id)
+    product_details = get_product_details(product)
 
-    prices = stripe.Price.list(product=product_id)
-    price = prices.data[0]
-    product_price = price.unit_amount / 100
-
-    if request.method == 'POST':
-        if not request.user.is_authenticated:
-            return redirect(f'{settings.BASE_URL}{reverse("account_login")}?next={request.get_full_path()}')
-        price_id = request.POST.get('price_id')
-        quantity = int(request.POST.get('quantity'))
-        checkout_session = stripe.checkout.Session.create(
-            line_items=[
-                {
-                    'price': price_id,
-                    'quantity': quantity,
-                }
-            ],
-            # payment_method_types=['card'],     # deprecated
-            mode='payment',
-            customer_creation='always',     # change
-            success_url=f'{settings.BASE_URL}{reverse("payment-successful")}?session_id={{CHECKOUT_SESSION_ID}}',
-            cancel_url=f'{settings.BASE_URL}{reverse("payment-cancelled")}',
-        )
-        return redirect(checkout_session.url, code=303)     # code=303 prevents checkout_session duplication
-
-    context = {
-        'product': product,
-        'product_price': product_price,
-    }
-
-    return render(request, 'shows/showtime.html', context)
+    return render(request, 'shows/showtime.html', {'product': product_details})
 
 
 def payment_successful(request):

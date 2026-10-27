@@ -6,5 +6,5 @@ urlpatterns = [
     path('£XXX/', payment_cancelled, name='payment-cancelled'),
     path('£££/', payment_successful, name='payment-successful'),
     path('stripe-webhook/', stripe_webhook, name='stripe-webhook'),
-    path('st2026/', showtime_view, name='showtime'),
+    path('<product_id>/', showtime_view, name='showtime'),
 ]
