@@ -1,9 +1,9 @@
 from django.conf import settings
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
-from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
+from .cart import Cart
 from .models import StripeOnePayment
 from .utils import get_product_details
 import stripe
@@ -29,7 +29,17 @@ def showtime_view(request, product_id):
     product = stripe.Product.retrieve(product_id)
     product_details = get_product_details(product)
 
+    cart = Cart(request)
+    product_details['in_cart'] = product_id in cart.cart_session
+
     return render(request, 'shows/showtime.html', {'product': product_details})
+
+
+def add_to_cart(request, product_id):
+    cart = Cart(request)
+    cart.add(product_id)
+    # print(cart.cart_session)
+    return redirect('showtime', product_id)
 
 
 def payment_successful(request):

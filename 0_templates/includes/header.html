@@ -22,6 +22,9 @@
                     Shows
                 </a>
             </li>
+            <li>
+                {% include 'shows/partials/menu-cart.html' %}
+            </li>
             <li x-data="{ dropdownOpen: false }" class="relative">
                 <a @click="dropdownOpen = !dropdownOpen" @click.away="dropdownOpen = false" class="cursor-pointer select-none">
                     <img alt="{{ user.username }} avatar" class="h-8 w-8 rounded-full object-cover" src="{{ user.profile.avatar }}">

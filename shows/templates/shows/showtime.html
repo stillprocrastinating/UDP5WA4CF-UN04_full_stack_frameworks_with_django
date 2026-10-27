@@ -16,9 +16,23 @@
             <p class="text-lg">
                 £{{ product.price|floatformat:2 }}
             </p>
-            <a class="button !block !rounded-full !bg-black hover:!bg-neutral-500 text-center">
-                Add to cart
-            </a>
+
+            {% if user.is_authenticated %}
+                {% if not product.in_cart %}
+                    <a class="button !block !rounded-full !bg-black hover:!bg-neutral-500 text-center" href="{% url 'cart' product.id %}">
+                        Add to cart
+                    </a>
+                {% else %}
+                    <a class="button !block !rounded-full !bg-green-600 hover:!bg-green-700 text-center" href="">
+                        Added to cart
+                    </a>
+                {% endif %}
+            {% else %}
+                <a class="button !block !rounded-full !bg-black hover:!bg-neutral-500 text-center" href="{% url 'account_login' %}?next={{ request.path }}">
+                    Add to cart
+                </a>
+            {% endif %}
+
             <p class="pt-8 text-sm">
                 {{ product.description }}
             </p>

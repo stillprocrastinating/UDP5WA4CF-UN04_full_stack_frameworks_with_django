@@ -83,6 +83,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'shows.context_processors.cart',
             ],
         },
     },
@@ -171,3 +172,5 @@ ACCOUNT_SIGNUP_FIELDS = ['email*', 'username*', 'password1*', 'password2*']
 
 STRIPE_SECRET_KEY = os.environ.get("STRIPE_SECRET_KEY", "secret")
 # STRIPE_WEBHOOK_SECRET = os.environ.get("STRIPE_WEBHOOK_SECRET", "webhook")
+CART_SESSION_ID = "cart"
+SESSION_COOKIE_AGE = 86400     # 24 hrs in seconds
