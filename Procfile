@@ -1,1 +1,1 @@
-web: gunicorn 0_settings/wsgi.py --preload
+web: gunicorn 0_settings.wsgi:application --preload
