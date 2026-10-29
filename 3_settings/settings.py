@@ -41,10 +41,6 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    'c_users',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -52,20 +48,24 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_cleanup.apps.CleanupConfig',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'c_users',
     'django_htmx',
     'home',
     'shows',
 ]
 
 MIDDLEWARE = [
-    'django.contrib.sessions.middleware.SessionMiddleware',     # must be first
-    'allauth.account.middleware.AccountMiddleware',
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.middleware.security.SecurityMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
     'django_htmx.middleware.HtmxMiddleware',
 ]
 
