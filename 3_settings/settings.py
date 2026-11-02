@@ -51,10 +51,10 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'c_users',
+    # 'c_users',
     'django_htmx',
     'home',
-    'shows',
+    # 'shows',
 ]
 
 MIDDLEWARE = [
@@ -86,7 +86,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'shows.context_processors.cart',
+                # 'shows.context_processors.cart',
             ],
         },
     },
