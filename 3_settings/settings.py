@@ -51,7 +51,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    # 'c_users',
+    'c_users',
     'django_htmx',
     'home',
     # 'shows',
