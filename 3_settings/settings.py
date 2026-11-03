@@ -54,7 +54,7 @@ INSTALLED_APPS = [
     'django_cleanup.apps.CleanupConfig',
     'django_htmx',
     'home',
-    # 'shows',
+    'shows',
 ]
 
 MIDDLEWARE = [
@@ -86,7 +86,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                # 'shows.context_processors.cart',
+                'shows.context_processors.cart',
             ],
         },
     },

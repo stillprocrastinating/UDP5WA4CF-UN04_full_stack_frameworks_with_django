@@ -1,0 +1,35 @@
+{% extends 'layouts/blank.html' %}
+
+{% block head_title %} | st2026{% endblock %}
+
+{% block content %} 
+
+<div class="max-w-4xl mx-auto px-8 py-24">
+    <div class="grid grid-cols-3 gap-6">
+        <div class="col-span-2 rounded-xl">
+            <img alt="A still of the show" class="rounded-xl w-full h-auto" src="{{ product.image }}">
+        </div>
+        <div class="pt-32">
+            <h2>
+                {{ product.name }}
+            </h2>
+            <p class="text-lg">
+                £{{ product.price|floatformat:2 }}
+            </p>
+
+            {% if user.is_authenticated %}
+                {% include 'shows/partials/cart-button.html' %}
+            {% else %}
+                <a class="button !block !rounded-full !bg-black hover:!bg-neutral-500 text-center" href="{% url 'account_login' %}?next={{ request.path }}">
+                    Add to cart
+                </a>
+            {% endif %}
+
+            <p class="pt-8 text-sm">
+                {{ product.description }}
+            </p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -26,7 +26,7 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('admin/', admin.site.urls),
     path('profile/', include('c_users.urls')),
-    # path('shows/', include('shows.urls')),
+    path('shows/', include('shows.urls')),
     path('@<username>/', profile_view, name='profile'),
 ]
 
