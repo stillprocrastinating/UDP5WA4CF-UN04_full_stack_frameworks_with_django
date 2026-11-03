@@ -1,4 +1,4 @@
-{% load static %}
+{% load static %}{% load django_htmx %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -103,9 +103,10 @@
         .alert-warning { @apply bg-amber-400 }
         .alert-danger { @apply bg-amber-500 }
     </style>
+    {% htmx_script %}
 
 </head>
-<body class="{% block class %}{% endblock %}">
+<body class="{% block class %}{% endblock %}" hx-headers="{'x-csrftoken': '{{ csrf_token }}'}">
 
     {% include 'includes/messages.html' %}
 	
