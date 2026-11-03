@@ -18,6 +18,8 @@
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     <script src="https://unpkg.com/htmx.org/dist/htmx.js" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    {% htmx_script %}
+    
     <style type="text/tailwindcss">
         [x-cloak] { 
             display: none !important; 
@@ -103,7 +105,6 @@
         .alert-warning { @apply bg-amber-400 }
         .alert-danger { @apply bg-amber-500 }
     </style>
-    {% htmx_script %}
 
 </head>
 <body class="{% block class %}{% endblock %}" hx-headers="{'x-csrftoken': '{{ csrf_token }}'}">
