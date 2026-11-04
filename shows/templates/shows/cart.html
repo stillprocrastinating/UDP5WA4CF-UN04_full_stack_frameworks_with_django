@@ -18,17 +18,14 @@
                             <div>
                                 <span>{{ product.name }}</span>
                                 <div class="flex gap-4 items-center mt-2">
-                                    <form>
+                                    <form hx-post="{% url 'hx-checkout' product.id %}" hx-swap="outerHTML" hx-target="#checkout_total" hx-trigger="change">
+                                        {% csrf_token %}
                                         <select class="cursor-pointer pr-2 py-2" name="quantity">
-                                            <option selected value="1">
-                                                1
-                                            </option>
-                                            <option value="2">
-                                                2
-                                            </option>
-                                            <option value="3">
-                                                3
-                                            </option>
+                                            {% for i in quantity_range %}
+                                                <option {% if i == product.quantity %}selected{% endif %} value="{{ i }}">
+                                                    {{ i }}
+                                                </option>
+                                            {% endfor %}
                                         </select>
                                     </form>
                                     <a class="cursor-pointer text-red-500" href="">
@@ -36,7 +33,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <div>
+                            <div id="product-total-{{ product.id }}">
                                 £{{ product.total_price|floatformat:2 }}
                             </div>
                         </div>
@@ -44,17 +41,7 @@
                 {% endfor %}
             </ul>
         </div>
-        <div class="p-6" id="checkout_total">
-            <h2>
-                Sub total
-            </h2>
-            <p>
-                Total: £{{ cart.get_total_price|floatformat:2 }}
-            </p>
-            <a class="button" href="">
-                Proceed to checkout
-            </a>
-        </div>
+        {% include 'shows/partials/checkout-total.html' %}
     </div>
 </div>
 

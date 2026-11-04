@@ -24,8 +24,9 @@ a_stripe = shows
 products = showtime
 UserPayment = StripeOnePayment
 get_total_cost = get_total_price
+update_checkout = hx_checkout
 ...
 subscribe = lessons
 
 
-timestamp = 29:25
+timestamp = 34:50
