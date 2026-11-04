@@ -44,11 +44,18 @@ def add_to_cart(request, product_id):
     product_details = get_product_details(product)
     product_details['in_cart'] = product_id in cart.cart_session
 
-    return render(
+    response = render(
         request,
         'shows/partials/cart-button.html',
         {'product': product_details}
     )
+    response['HX-Trigger'] = 'hx_menu_cart'
+
+    return response
+
+
+def hx_menu_cart(request):
+    return render(request, 'shows/partials/menu-cart.html')
 
 
 def payment_successful(request):

@@ -22,7 +22,7 @@
                     Shows
                 </a>
             </li>
-            <li>
+            <li hx-get="{% url 'hx-menu-cart' %}" hx-swap="innerHTML" hx-trigger="hx_menu_cart from:body">
                 {% include 'shows/partials/menu-cart.html' %}
             </li>
             <li x-data="{ dropdownOpen: false }" class="relative">

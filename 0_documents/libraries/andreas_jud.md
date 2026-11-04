@@ -27,4 +27,4 @@ UserPayment = StripeOnePayment
 subscribe = lessons
 
 
-timestamp = 22:04 -> 24:35
+timestamp = 26:52
