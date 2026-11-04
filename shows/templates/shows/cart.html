@@ -1,0 +1,61 @@
+{% extends 'layouts/blank.html' %}
+
+{% block content %}
+
+<div class="max-w-6xl mx-auto p-12">
+    <h1>
+        My cart
+    </h1>
+    <div class="gap-8 grid-cols-3 md:grid">
+        <div class="col-span-2">
+            <ul class="divide-y flex flex-col">
+                {% for product in cart %}
+                    <li class="flex items-center py-4">
+                        <a class="aspect-square bg-gray-100 block w-36" href="">
+                            <img src="{{ product.image }}">
+                        </a>
+                        <div class="flex justify-between pl-6 w-full">
+                            <div>
+                                <span>{{ product.name }}</span>
+                                <div class="flex gap-4 items-center mt-2">
+                                    <form>
+                                        <select class="cursor-pointer pr-2 py-2" name="quantity">
+                                            <option selected value="1">
+                                                1
+                                            </option>
+                                            <option value="2">
+                                                2
+                                            </option>
+                                            <option value="3">
+                                                3
+                                            </option>
+                                        </select>
+                                    </form>
+                                    <a class="cursor-pointer text-red-500" href="">
+                                        Remove
+                                    </a>
+                                </div>
+                            </div>
+                            <div>
+                                £{{ product.total_price|floatformat:2 }}
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="p-6" id="checkout_total">
+            <h2>
+                Sub total
+            </h2>
+            <p>
+                Total: £{{ cart.get_total_price|floatformat:2 }}
+            </p>
+            <a class="button" href="">
+                Proceed to checkout
+            </a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

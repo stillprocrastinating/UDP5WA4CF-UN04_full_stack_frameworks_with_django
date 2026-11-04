@@ -38,7 +38,7 @@ def showtime_view(request, product_id):
 def add_to_cart(request, product_id):
     cart = Cart(request)
     cart.add(product_id)
-    print(cart.cart_session)
+    # print(cart.cart_session)
 
     product = stripe.Product.retrieve(product_id)
     product_details = get_product_details(product)
@@ -56,6 +56,10 @@ def add_to_cart(request, product_id):
 
 def hx_menu_cart(request):
     return render(request, 'shows/partials/menu-cart.html')
+
+
+def cart_view(request):
+    return render(request, 'shows/cart.html')
 
 
 def payment_successful(request):
