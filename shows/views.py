@@ -29,8 +29,8 @@ def showtime_view(request, product_id):
     product = stripe.Product.retrieve(product_id)
     product_details = get_product_details(product)
 
-    # cart = Cart(request)
-    # product_details['in_cart'] = product_id in cart.cart_session
+    cart = Cart(request)
+    product_details['in_cart'] = product_id in cart.cart_session
 
     return render(request, 'shows/showtime.html', {'product': product_details})
 
@@ -40,17 +40,15 @@ def add_to_cart(request, product_id):
     cart.add(product_id)
     print(cart.cart_session)
 
-    # product = stripe.Product.retrieve(product_id)
-    # product_details = get_product_details(product)
-    # product_details['in_cart'] = product_id in cart.cart_session
+    product = stripe.Product.retrieve(product_id)
+    product_details = get_product_details(product)
+    product_details['in_cart'] = product_id in cart.cart_session
 
-    # return render(
-    #     request,
-    #     'shows/partials/cart-button.html',
-    #     {'product': product_details}
-    # )
-
-    return redirect('product', product_id)
+    return render(
+        request,
+        'shows/partials/cart-button.html',
+        {'product': product_details}
+    )
 
 
 def payment_successful(request):
