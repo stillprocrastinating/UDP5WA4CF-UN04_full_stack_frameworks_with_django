@@ -4,4 +4,4 @@
 | 2 | 2026-10-27 | Heroku live site application error log: `code=H14` | 2026-10-28 | Heroku Eco dyno ~~not~~ activated | N/A |
 | 3 | 2026-10-28 | Heroku live site HTTP 500 error ||||
 | 4 | 2026-11-02 | Heroku live site static media not loading ||||
-| 5 | 2026-11-03 | Andy Jud walkthrough project was working before bug#2, now the "Add to cart" button being built in _cart-button.html_ (_showtime.html_) doesn't send a Cart.cart_session request | 2026-11-04 | _base.html_ `<body hx-headers="{'x-csrftoken': '{{ csrf_token }}'}">` seems to be incompatible, despite coming from the official docs ||
+| 5 | 2026-11-03 | Andy Jud walkthrough project was working before bug#2, now the "Add to cart" button being built in _cart-button.html_ (_showtime.html_) doesn't send a Cart.cart_session request | 2026-11-04 | _base.html_ `<body hx-headers="{'x-csrftoken': '{{ csrf_token }}'}">` seems to be incompatible, despite coming from the official docs | [main 4647b48] REMOVE <body hx-headers='{'x-csrftoken': '{{ csrf_token }}'}'> |
