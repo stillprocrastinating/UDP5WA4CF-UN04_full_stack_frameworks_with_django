@@ -100,11 +100,16 @@ def hx_checkout(request, product_id):
 @login_required
 def checkout_view(request):
 
-    form = ShippingForm(initial={'email': request.user.email})
+    shipping_info = ShippingInfo.objects.filter(user=request.user).first()
+
+    if shipping_info:
+        form = ShippingForm(instance=shipping_info)
+    else:
+        form = ShippingForm(initial={'email': request.user.email})
 
     if request.method == 'POST':
 
-        form = ShippingForm(request.POST)
+        form = ShippingForm(request.POST, instance=shipping_info)
 
         if form.is_valid():
 
