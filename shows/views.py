@@ -1,11 +1,13 @@
 from django.conf import settings
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
-from .cart import Cart
-from .models import StripeOnePayment
-from .utils import get_product_details
+from shows.cart import Cart
+from shows.forms import ShippingForm
+from shows.models import CheckoutSession, ShippingInfo
+from shows.utils import create_checkout_session, get_product_details
 import stripe
 
 
@@ -69,6 +71,14 @@ def cart_view(request):
     )
 
 
+def remove_from_cart(request, product_id):
+
+    cart = Cart(request)
+    cart.remove(product_id)
+
+    return redirect('cart')
+
+
 def hx_checkout(request, product_id):
 
     quantity = int(request.POST.get('quantity', 1))
@@ -87,12 +97,38 @@ def hx_checkout(request, product_id):
     return response
 
 
-def remove_from_cart(request, product_id):
+@login_required
+def checkout_view(request):
 
-    cart = Cart(request)
-    cart.remove(product_id)
+    form = ShippingForm(initial={'email': request.user.email})
 
-    return redirect('cart')
+    if request.method == 'POST':
+
+        form = ShippingForm(request.POST)
+
+        if form.is_valid():
+
+            shipping_info = form.save(commit=False)
+            shipping_info.user = request.user
+            shipping_info.email = form.cleaned_data['email'].lower()
+            shipping_info.save()
+
+            cart = Cart(request)
+
+            checkout_session = create_checkout_session(
+                cart, shipping_info.email
+            )
+
+            CheckoutSession.objects.create(
+                checkout_id=checkout_session.id,
+                shipping_info=shipping_info,
+                total_price=cart.get_total_price()
+                # has_paid=False by default
+            )
+
+            return redirect(checkout_session.url, code=303)
+
+    return render(request, 'shows/checkout.html', {'form': form})
 
 
 def payment_successful(request):
@@ -104,18 +140,15 @@ def payment_successful(request):
         customer_id = session.customer
         customer = stripe.Customer.retrieve(customer_id)
 
-        line_item = stripe.checkout.Session.list_line_items(checkout_session_id).data[0]
-        StripeOnePayment.objects.get_or_create(
-            user=request.user,
-            stripe_customer_id=customer_id,
-            stripe_checkout_id=checkout_session_id,
-            stripe_product_id=line_item.price.product,
-            product_name=line_item.description,
-            quantity=line_item.quantity,
-            price=line_item.price.unit_amount / 100,
-            currency=line_item.price.currency,
-            has_paid=True
-        )
+        if settings.CART_SESSION_ID in request.session:
+            del request.session[settings.CART_SESSION_ID]
+
+        if settings.DEBUG:
+            checkout = CheckoutSession.objects.get(
+                checkout_id=checkout_session_id
+            )
+            checkout.has_paid = True
+            checkout.save()
 
     return render(
         request, 'shows/payment_successful.html', {'customer': customer}
@@ -145,8 +178,10 @@ def stripe_webhook(request):
     if e['type'] == 'checkout.session.completed':
         session = e['data']['object']
         checkout_session_id = session.get('id')
-        user_payment = StripeOnePayment.objects.get(stripe_checkout_id=checkout_session_id)
-        user_payment.has_paid = True
-        user_payment.save()
+        checkout = CheckoutSession.objects.get(
+            stripe_checkout_id=checkout_session_id
+        )
+        checkout.has_paid = True
+        checkout.save()
 
     return HttpResponse(status=200)     # success

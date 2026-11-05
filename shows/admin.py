@@ -1,5 +1,8 @@
 from django.contrib import admin
-from .models import StripeOnePayment
+from .models import CheckoutSession, ShippingInfo
 
 
-admin.site.register(StripeOnePayment)
+# admin.site.register(StripeOnePayment)
+
+admin.site.register(CheckoutSession)
+admin.site.register(ShippingInfo)

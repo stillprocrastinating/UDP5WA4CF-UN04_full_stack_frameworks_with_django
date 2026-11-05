@@ -5,7 +5,7 @@
     <p>
         Total: £{{ cart.get_total_price|floatformat:2 }}
     </p>
-    <a class="button" href="">
+    <a class="button" href="{% url 'checkout' %}">
         Proceed to checkout
     </a>
 </div>

@@ -1,0 +1,71 @@
+{% extends 'layouts/blank.html' %}
+
+{% block content %} 
+
+<div class="max-w-6xl mx-auto p-12">
+    <h1>
+        Checkout
+    </h1>
+    <div class="gap-8 grid-cols-3 md:grid">
+        <div class="col-span-2">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="mb-12">
+                    <div class="flex flex-col gap-4">
+                        {{ form.email }}
+                        {{ form.phone }}
+                    </div>
+                </div>
+                <div>
+                    <h2>
+                        Delivery address
+                    </h2>
+                    <div class="flex gap-6">
+                        <div class="mb-4 w-1/2">
+                            {{ form.first_name }}
+                        </div>
+                        <div class="mb-4 w-1/2">
+                            {{ form.last_name }}
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-4 mb-4">
+                        {{ form.address }}
+                        {{ form.address_line_two }}
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="mb-4 w-1/2">
+                            {{ form.city }}
+                        </div>
+                        <div class="mb-4 w-1/2">
+                            {{ form.postcode }}
+                        </div>
+                    </div>
+                </div>
+                <button type="submit">
+                    Confirm
+                </button>
+            </form>
+        </div>
+        <div>
+            <div class="border p-6 rounded-lg shadow-md">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="text-2xl">
+                        Sub total
+                    </div>
+                    <div>
+                        £{{ cart.get_total_price|floatformat:2 }}
+                    </div>
+                </div>
+                <div class="flex items-center justify-between mb-4">
+                    <span>Items:</span>
+                    <span>{{ cart|length }}</span>
+                </div>
+                <a class="button button-gray !font-normal !px-4 !py-2 !shadow-none !text-gray-600" href="{% url 'cart' %}">
+                    Back to cart
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
