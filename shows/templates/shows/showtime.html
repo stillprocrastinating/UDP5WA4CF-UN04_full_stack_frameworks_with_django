@@ -13,16 +13,22 @@
             <h2>
                 {{ product.name }}
             </h2>
-            <p class="text-lg">
-                £{{ product.price|floatformat:2 }}
-            </p>
-
-            {% if user.is_authenticated %}
-                {% include 'shows/partials/cart-button.html' %}
-            {% else %}
-                <a class="button !block !rounded-full !bg-black hover:!bg-neutral-500 text-center" href="{% url 'account_login' %}?next={{ request.path }}">
-                    Add to cart
+            {% if product.id == "prod_VUQYxR4lNOuWJY" %}     <!-- Showtime 2026 -->
+                <a class="button" href="https://www.youtube.com/watch?v=ErB3UzAdql8" target="_blank">
+                    Go to video
                 </a>
+            {% else %}
+                <p class="text-lg">
+                    £{{ product.price|floatformat:2 }}
+                </p>
+
+                {% if user.is_authenticated %}
+                    {% include 'shows/partials/cart-button.html' %}
+                {% else %}
+                    <a class="button !block !rounded-full !bg-black hover:!bg-neutral-500 text-center" href="{% url 'account_login' %}?next={{ request.path }}">
+                        Add to cart
+                    </a>
+                {% endif %}
             {% endif %}
 
             <p class="pt-8 text-sm">
