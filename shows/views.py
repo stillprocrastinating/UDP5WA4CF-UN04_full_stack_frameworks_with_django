@@ -6,7 +6,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
 from shows.cart import Cart
 from shows.forms import ShippingForm
-from shows.models import CheckoutSession, ShippingInfo
+from shows.models import CheckoutSession, ProductVariation, ShippingInfo
 from shows.utils import create_checkout_session, get_product_details
 import stripe
 
@@ -29,13 +29,19 @@ def shows_view(request):
 
 def showtime_view(request, product_id):
 
+    product_variation = ProductVariation.objects.filter(product_id=product_id).first()
     product = stripe.Product.retrieve(product_id)
     product_details = get_product_details(product)
 
     cart = Cart(request)
     product_details['in_cart'] = product_id in cart.cart_session
 
-    return render(request, 'shows/showtime.html', {'product': product_details})
+    context = {
+        'product': product_details,
+        'product_variation': product_variation,
+    }
+
+    return render(request, 'shows/showtime.html', context)
 
 
 def add_to_cart(request, product_id):

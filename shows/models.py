@@ -9,6 +9,8 @@ stripe.api_key = settings.STRIPE_SECRET_KEY
 
 class ProductVariation(models.Model):
 
+    product_id = models.CharField(max_length=255)
+
     @property
     def prices(self):
 
@@ -17,7 +19,7 @@ class ProductVariation(models.Model):
 
         for price in price_list['data']:
 
-            disk = price['metadata'].get('disk') or 'DVD'
+            disk = price['metadata']['disk'] or 'DVD'     # price['metadata'].get('disk') or 'DVD'
 
             prices.append({
                 'disk': disk,

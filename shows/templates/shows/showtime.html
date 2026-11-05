@@ -21,7 +21,18 @@
                 <p class="text-lg">
                     £{{ product.price|floatformat:2 }}
                 </p>
-
+                {% if product_variation.prices %}
+                    <div class="text-gray-400">
+                        Disk type
+                    </div>
+                    <div class="gap-1 grid grid-cols-2 mb-4">
+                        {% for product_price in product_variation.prices %}
+                            <a class="border-2 hover:border-blue-500 inline-block m-0.5 py-2 rounded-lg text-center" href="">
+                                {{ product_price.disk }}
+                            </a>
+                        {% endfor %}
+                    </div>
+                {% endif %}
                 {% if user.is_authenticated %}
                     {% include 'shows/partials/cart-button.html' %}
                 {% else %}
@@ -30,7 +41,6 @@
                     </a>
                 {% endif %}
             {% endif %}
-
             <p class="pt-8 text-sm">
                 {{ product.description }}
             </p>
