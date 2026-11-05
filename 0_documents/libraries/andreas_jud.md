@@ -29,4 +29,4 @@ update_checkout = hx_checkout
 subscribe = lessons
 
 
-timestamp = 34:50
+timestamp = 35:36

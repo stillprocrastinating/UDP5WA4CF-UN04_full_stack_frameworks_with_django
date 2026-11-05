@@ -10,8 +10,9 @@
     </a>
 </div>
 
+
 <div class="hidden">
-    <div hx-swap-oob="true" id="product-total-{{ product.id }}">
+    <div hx-swap-oob="true" id="product-total-{{ product.id }}">     <!-- hx-swap- out-of-band -->
         £{{ product.total_price|floatformat:2 }}
     </div>
 </div>

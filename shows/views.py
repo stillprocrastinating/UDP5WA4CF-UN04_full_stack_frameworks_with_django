@@ -13,6 +13,7 @@ stripe.api_key = settings.STRIPE_SECRET_KEY
 
 
 def shows_view(request):
+
     products_list = stripe.Product.list()
     products = []
 
@@ -36,6 +37,7 @@ def showtime_view(request, product_id):
 
 
 def add_to_cart(request, product_id):
+
     cart = Cart(request)
     cart.add(product_id)
     # print(cart.cart_session)
@@ -59,13 +61,16 @@ def hx_menu_cart(request):
 
 
 def cart_view(request):
+
     quantity_range = list(range(1, 11))
+
     return render(
         request, 'shows/cart.html', {'quantity_range': quantity_range}
     )
 
 
 def hx_checkout(request, product_id):
+
     quantity = int(request.POST.get('quantity', 1))
     cart = Cart(request)
     cart.add(product_id, quantity)
@@ -82,8 +87,18 @@ def hx_checkout(request, product_id):
     return response
 
 
+def remove_from_cart(request, product_id):
+
+    cart = Cart(request)
+    cart.remove(product_id)
+
+    return redirect('cart')
+
+
 def payment_successful(request):
+
     checkout_session_id = request.GET.get('session_id', None)
+
     if checkout_session_id:
         session = stripe.checkout.Session.retrieve(checkout_session_id)
         customer_id = session.customer
@@ -114,6 +129,7 @@ def payment_cancelled(request):
 @require_POST
 @csrf_exempt
 def stripe_webhook(request):
+
     payload = request.body     # JSON data
     signature_header = request.META['HTTP_STRIPE_SIGNATURE']     # stripe origin verification
     endpoint_secret = settings.STRIPE_WEBHOOK_SECRET     # stripe webhook key

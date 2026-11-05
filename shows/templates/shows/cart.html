@@ -28,7 +28,7 @@
                                             {% endfor %}
                                         </select>
                                     </form>
-                                    <a class="cursor-pointer text-red-500" href="">
+                                    <a class="cursor-pointer text-red-500" href="{% url 'remove-from-cart' product.id %}">
                                         Remove
                                     </a>
                                 </div>
