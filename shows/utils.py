@@ -4,8 +4,9 @@ import stripe
 
 
 def get_product_details(product):
-    prices = stripe.Price.list(product=product['id'])
-    price = prices['data'][0]
+
+    price_id = product.default_price
+    price = stripe.Price.retrieve(price_id)
     product_details = {
         'id': product['id'],
         'name': product['name'],

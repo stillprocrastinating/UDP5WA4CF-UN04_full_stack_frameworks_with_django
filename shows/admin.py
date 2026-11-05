@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models import CheckoutSession, ShippingInfo
+from shows.models import CheckoutSession, ProductVariation, ShippingInfo
 
 
-# admin.site.register(StripeOnePayment)
+admin.site.register(ProductVariation)
 
 admin.site.register(CheckoutSession)
 admin.site.register(ShippingInfo)
