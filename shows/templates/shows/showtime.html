@@ -27,7 +27,7 @@
                     </div>
                     <div class="gap-1 grid grid-cols-2 mb-4">
                         {% for product_price in product_variation.prices %}
-                            <a class="border-2 hover:border-blue-500 inline-block m-0.5 py-2 rounded-lg text-center" href="">
+                            <a class="border-2 {% if product_price.disk|lower == disk|lower %}border-blue-500{% endif %} cursor-pointer hover:border-blue-500 inline-block m-0.5 py-2 rounded-lg text-center" onclick="updateURL('disk', '{{ product_price.disk|lower }}')">
                                 {{ product_price.disk }}
                             </a>
                         {% endfor %}
@@ -47,5 +47,16 @@
         </div>
     </div>
 </div>
+
+<script>
+    // Update URL with selected options
+    function updateURL (key, value) {
+        const URLParams = new URLSearchParams(window.location.search);
+        URLParams.set(key, value);
+        const newURL = window.location.pathname + '?' + URLParams.toString();
+        window.history.pushState({}, '', newURL);
+        window.location.reload();
+    }
+</script>
 
 {% endblock %}

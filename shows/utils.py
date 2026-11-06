@@ -1,17 +1,25 @@
 from django.conf import settings
 from django.urls import reverse
+from shows.models import ProductVariation
 import stripe
 
 
-def get_product_details(product):
+def get_product_details(product, disk=None):
 
-    price_id = product.default_price
-    price = stripe.Price.retrieve(price_id)
+    product_variation = ProductVariation.objects.filter(product_id=product.id).first()
+
+    if product_variation:
+        price = product_variation.get_price(disk)
+    else:
+        price_id = product.default_price
+        price = stripe.Price.retrieve(price_id)
+
     product_details = {
         'id': product['id'],
         'name': product['name'],
         'image': product['images'][0],
         'description': product['description'],
+        'price_in_pence': price['unit_amount'],
         'price': price['unit_amount'] / 100,
     }
 

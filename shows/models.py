@@ -38,7 +38,7 @@ class ProductVariation(models.Model):
 
             for price in price_list['data']:
 
-                price_disk = price['metadata'].get('disk') or None
+                price_disk = price['metadata']['disk'] or None     # price['metadata'].get('disk') or None
 
                 if price_disk and price_disk.lower() == disk.lower():
                     return price

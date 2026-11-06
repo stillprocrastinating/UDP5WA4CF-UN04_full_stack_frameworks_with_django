@@ -22,16 +22,18 @@ def shows_view(request):
     for product in products_list['data']:
         # if product.get('metadata', {}).get('category') == "show_recording":     # .get() AttributeError: dict
         if product['metadata']['category'] == "show_recording":
-            products.append(get_product_details(product))
+            products.append(get_product_details(product, None))
 
     return render(request, 'shows/shows.html', {'products': products})
 
 
 def showtime_view(request, product_id):
 
+    disk = request.GET.get('disk') or 'DVD'
+
     product_variation = ProductVariation.objects.filter(product_id=product_id).first()
     product = stripe.Product.retrieve(product_id)
-    product_details = get_product_details(product)
+    product_details = get_product_details(product, disk)
 
     cart = Cart(request)
     product_details['in_cart'] = product_id in cart.cart_session
@@ -39,6 +41,7 @@ def showtime_view(request, product_id):
     context = {
         'product': product_details,
         'product_variation': product_variation,
+        'disk': disk
     }
 
     return render(request, 'shows/showtime.html', context)
