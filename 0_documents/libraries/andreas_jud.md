@@ -30,4 +30,4 @@ subscribe = lessons
 
 
 https://www.youtube.com/watch?v=9gIUK57TlX0&list=PL5E1F5cTSTtRwWj43zbcl5d-e2c1f1M9q&index=5
-timestamp = 34:22
+timestamp = 37:21

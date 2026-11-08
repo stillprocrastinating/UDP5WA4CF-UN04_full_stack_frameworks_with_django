@@ -33,10 +33,24 @@ def create_checkout_session(cart, customer_email):
     rps = reverse("payment-successful")
 
     for item in cart:
-        prices = stripe.Price.list(product=item['id'])
-        price = prices.data[0]
+
+        options = []
+
+        if item.get('disk') is not None:
+            options.append(f"Disk type: {item['disk']}")
+
+        description = ", ".join(options) if options else item['description']
+
         line_items.append({
-            'price': price.id,
+            'price': {
+                'currency': 'gbp',     # 'usd'
+                'product_data': {
+                    'name': item['name'],
+                    'description': description,
+                    'images': [item['image']]
+                },
+                'unit_amount': item['price_in_pence']
+            },
             'quantity': item['quantity']
         })
 
@@ -46,7 +60,7 @@ def create_checkout_session(cart, customer_email):
         mode='payment',
         customer_creation='always',
         success_url=f'{sBU}{rps}?session_id={{CHECKOUT_SESSION_ID}}',
-        cancel_url=f'{sBU}{reverse("payment-cancelled")}',
+        cancel_url=f'{sBU}{reverse("cart")}',
         customer_email=customer_email
     )
 

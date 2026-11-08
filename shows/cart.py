@@ -27,6 +27,8 @@ class Cart:
                 'product_id': product.id,
                 'image': product_details['image'],     # item['image']
                 'name': product_details['name'],
+                'description': product_details['description'],
+                'price_in_pence': product_details['price_in_pence'],
                 'price': product_details['price'],
                 'quantity': item['quantity'],
                 'total_price': product_details['price'] * item['quantity'],
