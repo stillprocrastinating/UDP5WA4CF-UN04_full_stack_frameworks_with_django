@@ -39,11 +39,12 @@ class Cart:
     def save(self):
         self.session.modified = True
 
-    def add(self, product_id, quantity=1, disk='dvd'):
+    def add(self, product_id, quantity=1, disk='dvd', item_id=None):
 
-        item_id = str(uuid.uuid4())
-        while item_id in self.cart_session:
+        if not item_id:
             item_id = str(uuid.uuid4())
+            while item_id in self.cart_session:
+                item_id = str(uuid.uuid4())
 
         if item_id in self.cart_session:
             self.cart_session[item_id]['quantity'] = quantity
