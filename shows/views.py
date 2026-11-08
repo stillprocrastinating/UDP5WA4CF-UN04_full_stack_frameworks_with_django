@@ -52,6 +52,10 @@ def showtime_view(request, product_id):
 def add_to_cart(request, product_id):
 
     disk = request.GET.get('disk') or ('dvd')
+    if disk == 'dvd':
+        disk = disk.upper()
+    else:
+        disk = disk.capitalize()
 
     cart = Cart(request)
     cart.add(product_id, disk=disk)
