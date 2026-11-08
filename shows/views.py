@@ -6,7 +6,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
 from shows.cart import Cart
 from shows.forms import ShippingForm
-from shows.models import CheckoutSession, ProductVariation, ShippingInfo
+from shows.models import CheckoutSession, ShippingInfo
 from shows.utils import create_checkout_session, get_product_details
 import stripe
 
@@ -23,46 +23,31 @@ def shows_view(request):
 
     for product in products_list['data']:
         if product['metadata']['category'] == "show_recording":     # product.get('metadata', {}).get('category')
-            products.append(get_product_details(product, None))
+            products.append(get_product_details(product))
 
     return render(request, 'shows/shows.html', {'products': products})
 
 
 def showtime_view(request, product_id):
 
-    disk = request.GET.get('disk') or 'DVD'
-
-    product_variation = ProductVariation.objects.filter(product_id=product_id).first()
     product = stripe.Product.retrieve(product_id)
-    product_details = get_product_details(product, disk)
+    product_details = get_product_details(product)
 
     cart = Cart(request)
     product_details['in_cart'] = product_id in cart.cart_session
 
-    context = {
-        'product': product_details,
-        'product_variation': product_variation,
-        'disk': disk
-    }
-
-    return render(request, 'shows/showtime.html', context)
+    return render(request, 'shows/showtime.html', {'product': product_details})
 
 
 def add_to_cart(request, product_id):
 
     product = stripe.Product.retrieve(product_id)
 
-    disk = request.GET.get('disk') or ('dvd')
-    if disk == 'dvd':
-        disk = disk.upper()
-    else:
-        disk = disk.capitalize()
-
     cart = Cart(request)
-    cart.add(product_id, disk=disk)
+    cart.add(product_id)
     # print(cart.cart_session)
 
-    product_details = get_product_details(product, disk)
+    product_details = get_product_details(product)
     product_details['in_cart'] = product_id in cart.cart_session
 
     response = render(
@@ -96,18 +81,15 @@ def remove_from_cart(request, product_id):
     return redirect('cart')
 
 
-def hx_checkout(request, item_id):
+def hx_checkout(request, product_id):
 
     quantity = int(request.POST.get('quantity', 1))
-    disk = request.POST.get('disk')
     cart = Cart(request)
-    product_id = cart.cart_session.get(item_id)['product_id']
-    cart.add(product_id, quantity, item_id=item_id)
+    cart.add(product_id, quantity)
 
     product = stripe.Product.retrieve(product_id)
-    product_details = get_product_details(product, disk)
+    product_details = get_product_details(product)
     product_details['total_price'] = product_details['price'] * quantity
-    product_details['item_id'] = item_id
 
     response = render(
         request, 'shows/partials/checkout-total.html', {'product': product}

@@ -1,59 +1,21 @@
-from django.conf import settings
 from django.contrib.auth.models import User
 from django.db import models
-import stripe
 
 
-stripe.api_key = settings.STRIPE_SECRET_KEY
+# class StripeOnePayment(models.Model):
 
+#     user = models.ForeignKey(User, on_delete=models.CASCADE)
+#     stripe_customer_id = models.CharField(max_length=255)
+#     stripe_checkout_id = models.CharField(max_length=255)
+#     stripe_product_id = models.CharField(max_length=255)
+#     product_name = models.CharField(max_length=255)
+#     quantity = models.IntegerField(default=1)
+#     price = models.DecimalField(decimal_places=2, max_digits=10)
+#     currency = models.CharField(max_length=3)
+#     has_paid = models.BooleanField(default=False)
 
-class ProductVariation(models.Model):
-
-    product_id = models.CharField(max_length=255)
-
-    @property
-    def prices(self):
-
-        prices = []
-        price_list = stripe.Price.list(product=self.product_id)
-
-        for price in price_list['data']:
-
-            disk = price['metadata']['disk'] or 'DVD'     # price['metadata'].get('disk') or 'DVD'
-
-            prices.append({
-                'disk': disk,
-                'price': price['unit_amount'] / 100,
-            })
-
-        prices = sorted(prices, key=lambda x: x['price'])
-
-        return prices
-
-    def get_price(self, disk=None):
-
-        if disk:
-
-            price_list = stripe.Price.list(product=self.product_id)
-
-            for price in price_list['data']:
-
-                price_disk = price['metadata']['disk'] or None     # price['metadata'].get('disk') or None
-
-                if price_disk and price_disk.lower() == disk.lower():
-                    return price
-
-        product = stripe.Product.retrieve(self.product_id)
-        default_price_id = product.default_price
-        price = stripe.Price.retrieve(default_price_id)
-
-        return price
-
-    def __str__(self):
-
-        product = stripe.Product.retrieve(self.product_id)
-
-        return product['name']
+#     def __str__(self):
+#         return f'{self.user.username} - {self.product_name} - Paid: {self.has_paid}'
 
 
 class ShippingInfo(models.Model):

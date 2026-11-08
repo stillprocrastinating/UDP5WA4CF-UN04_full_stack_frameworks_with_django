@@ -11,7 +11,7 @@ urlpatterns = [
         'cart/<product_id>/remove/', remove_from_cart, name='remove-from-cart'
     ),
     path('checkout/', checkout_view, name='checkout'),
-    path('hx_checkout/<item_id>/', hx_checkout, name='hx-checkout'),
+    path('hx_checkout/<product_id>/', hx_checkout, name='hx-checkout'),
     path('hx_menu_cart/', hx_menu_cart, name='hx-menu-cart'),
     path('stripe-webhook/', stripe_webhook, name='stripe-webhook'),
     path('<product_id>/', showtime_view, name='showtime'),

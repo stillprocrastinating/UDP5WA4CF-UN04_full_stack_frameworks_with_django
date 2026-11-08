@@ -1,7 +1,6 @@
 from django.conf import settings
 from .utils import get_product_details
 import stripe
-import uuid
 
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -18,21 +17,17 @@ class Cart:
         self.cart_session = cart_session
 
     def __iter__(self):
-        for item_id, item in self.cart_session.items():
-            product = stripe.Product.retrieve(item['product_id'])
-            product_details = get_product_details(product, disk=item['disk'])
+        for product_id, item in self.cart_session.items():
+            product = stripe.Product.retrieve(product_id)
+            product_details = get_product_details(product)
 
             yield {
-                'id': item_id,
-                'product_id': product.id,
-                'image': product_details['image'],     # item['image']
+                'id': product_id,
+                'image': product_details['image'],
                 'name': product_details['name'],
-                'description': product_details['description'],
-                'price_in_pence': product_details['price_in_pence'],
                 'price': product_details['price'],
                 'quantity': item['quantity'],
-                'total_price': product_details['price'] * item['quantity'],
-                'disk': item['disk']
+                'total_price': product_details['price'] * item['quantity']
             }
 
     def __len__(self):
@@ -41,21 +36,11 @@ class Cart:
     def save(self):
         self.session.modified = True
 
-    def add(self, product_id, quantity=1, disk=None, item_id=None):
+    def add(self, product_id, quantity=1):
 
-        if not item_id:
-            item_id = str(uuid.uuid4())
-            while item_id in self.cart_session:
-                item_id = str(uuid.uuid4())
-
-        if item_id in self.cart_session:
-            self.cart_session[item_id]['quantity'] = quantity
-        else:
-            self.cart_session[item_id] = {
-                'product_id': product_id,
-                'quantity': quantity,
-                'disk': disk
-            }
+        self.cart_session[product_id] = {
+            'quantity': quantity
+        }
 
         self.save()
 

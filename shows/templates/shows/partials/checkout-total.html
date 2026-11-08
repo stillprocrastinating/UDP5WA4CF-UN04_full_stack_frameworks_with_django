@@ -12,12 +12,7 @@
 
 
 <div class="hidden">
-    <div hx-swap-oob="true" id="product-total-{{ product.item_id }}">     <!-- hx-swap- out-of-band -->
+    <div hx-swap-oob="true" id="product-total-{{ product.id }}">     <!-- hx-swap- out-of-band -->
         £{{ product.total_price|floatformat:2 }}
     </div>
-    {% if not product.quantity == 1 %}
-        <div class="font-light pt-2 text-gray-400 text-sm">
-            £{{ product.price|floatformat:2 }} each
-        </div>
-    {% endif %}
 </div>

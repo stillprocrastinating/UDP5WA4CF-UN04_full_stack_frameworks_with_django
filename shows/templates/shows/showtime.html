@@ -25,23 +25,8 @@
                 <p class="text-lg">
                     £{{ product.price|floatformat:2 }}
                 </p>
-                {% if product_variation.prices %}
-                    <div class="text-gray-400">
-                        Disk type
-                    </div>
-                    <div class="gap-1 grid grid-cols-2 mb-4">
-                        {% for product_price in product_variation.prices %}
-                            <a class="border-2 {% if product_price.disk|lower == disk|lower %}border-blue-500{% endif %} cursor-pointer hover:border-blue-500 inline-block m-0.5 py-2 rounded-lg text-center" onclick="updateURL('disk', '{{ product_price.disk|lower }}')">
-                                {{ product_price.disk }}
-                            </a>
-                        {% endfor %}
-                    </div>
-                {% endif %}
                 {% if user.is_authenticated %}
-                    <!-- include 'shows/partials/cart-button.html' %} -->
-                    <a class="button !block !rounded-full !bg-black hover:!bg-neutral-500 cursor-pointer text-center" hx-get="{% url 'add-to-cart' product.id %}?disk={{ request.GET.disk }}" hx-target="this" hx-swap="outerHTML">
-                        Add to cart
-                    </a>
+                    {% include 'shows/partials/cart-button.html' %}
                 {% else %}
                     <a class="button !block !rounded-full !bg-black hover:!bg-neutral-500 text-center" href="{% url 'account_login' %}?next={{ request.path }}">
                         Add to cart
@@ -54,16 +39,5 @@
         </div>
     </div>
 </div>
-
-<script>
-    // Update URL with selected options
-    function updateURL (key, value) {
-        const URLParams = new URLSearchParams(window.location.search);
-        URLParams.set(key, value);
-        const newURL = window.location.pathname + '?' + URLParams.toString();
-        window.history.pushState({}, '', newURL);
-        window.location.reload();
-    }
-</script>
 
 {% endblock %}
