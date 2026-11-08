@@ -93,11 +93,12 @@ def remove_from_cart(request, product_id):
 def hx_checkout(request, product_id):
 
     quantity = int(request.POST.get('quantity', 1))
+    disk = request.POST.get('disk')
     cart = Cart(request)
     cart.add(product_id, quantity)
 
     product = stripe.Product.retrieve(product_id)
-    product_details = get_product_details(product)
+    product_details = get_product_details(product, disk)
     product_details['total_price'] = product_details['price'] * quantity
 
     response = render(

@@ -32,6 +32,7 @@
                                                 </option>
                                             {% endfor %}
                                         </select>
+                                        <input name="disk" type="hidden" value="{{ product.disk|default:'DVD' }}">
                                     </form>
                                     <a class="cursor-pointer text-red-500" href="{% url 'remove-from-cart' product.id %}">
                                         Remove
