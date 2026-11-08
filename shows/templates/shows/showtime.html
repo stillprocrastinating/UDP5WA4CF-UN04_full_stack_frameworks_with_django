@@ -7,7 +7,11 @@
 <div class="max-w-4xl mx-auto px-8 py-24">
     <div class="grid grid-cols-3 gap-6">
         <div class="col-span-2 rounded-xl">
-            <img alt="A still of the show" class="rounded-xl w-full h-auto" src="{{ product.image }}">
+            {% if product.id == "prod_VUQYxR4lNOuWJY" %}     <!-- Showtime 2026 -->
+                <img alt="A still of the show" class="h-auto rounded-xl w-full" src="{{ product.image }}">
+            {% else %}
+                <img alt="The disk box art" class="h-auto rounded-xl w-full" src="{{ product.image }}">
+            {% endif %}
         </div>
         <div class="pt-32">
             <h2>
