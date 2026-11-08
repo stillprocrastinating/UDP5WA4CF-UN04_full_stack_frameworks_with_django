@@ -16,7 +16,12 @@
                         </a>
                         <div class="flex justify-between pl-6 w-full">
                             <div>
-                                <span>{{ product.name }}</span>
+                                <span>
+                                    {{ product.name }}
+                                    <div class="text-gray-400">
+                                        {% if product.disk %}<span class="mr-2">{{ product.disk }}</span>{% endif %}
+                                    </div>
+                                </span>
                                 <div class="flex gap-4 items-center mt-2">
                                     <form hx-post="{% url 'hx-checkout' product.id %}" hx-swap="outerHTML" hx-target="#checkout_total" hx-trigger="change">
                                         {% csrf_token %}

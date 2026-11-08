@@ -19,15 +19,16 @@ class Cart:
     def __iter__(self):
         for product_id, item in self.cart_session.items():
             product = stripe.Product.retrieve(product_id)
-            product_details = get_product_details(product)
+            product_details = get_product_details(product, disk=item['disk'])
 
             yield {
                 'id': product_id,
-                'image': product_details['image'],
+                'image': product_details['image'],     # item['image']
                 'name': product_details['name'],
                 'price': product_details['price'],
                 'quantity': item['quantity'],
                 'total_price': product_details['price'] * item['quantity'],
+                'disk': item['disk']
             }
 
     def __len__(self):
@@ -36,10 +37,16 @@ class Cart:
     def save(self):
         self.session.modified = True
 
-    def add(self, product_id, quantity=1):
-        self.cart_session[product_id] = {
-            'quantity': quantity,
-        }
+    def add(self, product_id, quantity=1, disk='dvd'):
+
+        if product_id in self.cart_session:
+            self.cart_session[product_id]['quantity'] = quantity
+        else:
+            self.cart_session[product_id] = {
+                'quantity': quantity,
+                'disk': disk
+            }
+
         self.save()
 
     def remove(self, product_id):

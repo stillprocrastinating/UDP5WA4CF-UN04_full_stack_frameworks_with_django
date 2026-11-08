@@ -49,12 +49,14 @@ def showtime_view(request, product_id):
 
 def add_to_cart(request, product_id):
 
+    disk = request.GET.get('disk') or ('dvd')
+
     cart = Cart(request)
-    cart.add(product_id)
+    cart.add(product_id, disk=disk)
     # print(cart.cart_session)
 
     product = stripe.Product.retrieve(product_id)
-    product_details = get_product_details(product)
+    product_details = get_product_details(product, disk)
     product_details['in_cart'] = product_id in cart.cart_session
 
     response = render(
