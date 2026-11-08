@@ -1,6 +1,7 @@
 from django.conf import settings
 from .utils import get_product_details
 import stripe
+import uuid
 
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -17,12 +18,13 @@ class Cart:
         self.cart_session = cart_session
 
     def __iter__(self):
-        for product_id, item in self.cart_session.items():
-            product = stripe.Product.retrieve(product_id)
+        for item_id, item in self.cart_session.items():
+            product = stripe.Product.retrieve(item['product_id'])
             product_details = get_product_details(product, disk=item['disk'])
 
             yield {
-                'id': product_id,
+                'id': item_id,
+                'product_id': product.id,
                 'image': product_details['image'],     # item['image']
                 'name': product_details['name'],
                 'price': product_details['price'],
@@ -39,10 +41,15 @@ class Cart:
 
     def add(self, product_id, quantity=1, disk='dvd'):
 
-        if product_id in self.cart_session:
-            self.cart_session[product_id]['quantity'] = quantity
+        item_id = str(uuid.uuid4())
+        while item_id in self.cart_session:
+            item_id = str(uuid.uuid4())
+
+        if item_id in self.cart_session:
+            self.cart_session[item_id]['quantity'] = quantity
         else:
-            self.cart_session[product_id] = {
+            self.cart_session[item_id] = {
+                'product_id': product_id,
                 'quantity': quantity,
                 'disk': disk
             }

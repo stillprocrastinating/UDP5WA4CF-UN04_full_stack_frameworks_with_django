@@ -34,7 +34,10 @@
                     </div>
                 {% endif %}
                 {% if user.is_authenticated %}
-                    {% include 'shows/partials/cart-button.html' %}
+                    <!-- include 'shows/partials/cart-button.html' %} -->
+                    <a class="button !block !rounded-full !bg-black hover:!bg-neutral-500 cursor-pointer text-center" hx-get="{% url 'add-to-cart' product.id %}?disk={{ request.GET.disk }}" hx-target="this" hx-swap="outerHTML">
+                        Add to cart
+                    </a>
                 {% else %}
                     <a class="button !block !rounded-full !bg-black hover:!bg-neutral-500 text-center" href="{% url 'account_login' %}?next={{ request.path }}">
                         Add to cart

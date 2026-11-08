@@ -1,11 +1,3 @@
-<div id="cart-button">
-    {% if not product.in_cart %}
-        <a class="button !block !rounded-full !bg-black hover:!bg-neutral-500 cursor-pointer text-center" hx-get="{% url 'add-to-cart' product.id %}?disk={{ request.GET.disk }}" hx-target="#cart-button" hx-swap="outerHTML">
-            Add to cart
-        </a>
-    {% else %}
-        <a class="button !block !rounded-full !bg-green-600 hover:!bg-green-700 text-center" href="{% url 'cart' %}">
-            Added to cart
-        </a>
-    {% endif %}
-</div>
+<a class="button !block !rounded-full !bg-green-600 hover:!bg-green-700 text-center" href="{% url 'cart' %}">
+    Added to cart
+</a>

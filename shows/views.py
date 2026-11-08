@@ -16,6 +16,8 @@ stripe.api_key = settings.STRIPE_SECRET_KEY
 
 def shows_view(request):
 
+    # del request.session[settings.CART_SESSION_ID]
+
     products_list = stripe.Product.list()
     products = []
 
