@@ -22,9 +22,13 @@ This code renders the redirect to a new page (for example, a login page) then re
 
 a_stripe = shows
 products = showtime
-UserPayment = StripeOnePayment
 get_total_cost = get_total_price
 update_checkout = hx_checkout
+shop = show_recording
+address_line_one = address
+quality = disk
+ProductVariationObject = `None` - where images could pull from
+price_in_cent = price_in_pence
 ...
 subscribe = lessons
 

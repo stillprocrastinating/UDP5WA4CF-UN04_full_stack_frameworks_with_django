@@ -41,7 +41,7 @@ class Cart:
     def save(self):
         self.session.modified = True
 
-    def add(self, product_id, quantity=1, disk='dvd', item_id=None):
+    def add(self, product_id, quantity=1, disk=None, item_id=None):
 
         if not item_id:
             item_id = str(uuid.uuid4())
