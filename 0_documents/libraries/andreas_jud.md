@@ -30,8 +30,8 @@ quality = disk
 ProductVariationObject = `None` - where images could pull from
 price_in_cent = price_in_pence
 ...
-subscribe = lessons
+subscription = lessons
 
 
-https://www.youtube.com/watch?v=9gIUK57TlX0&list=PL5E1F5cTSTtRwWj43zbcl5d-e2c1f1M9q&index=5
-timestamp = 37:21
+https://www.youtube.com/watch?v=i7UYf4erY84&list=PL5E1F5cTSTtRwWj43zbcl5d-e2c1f1M9q&index=7
+timestamp = 6:28

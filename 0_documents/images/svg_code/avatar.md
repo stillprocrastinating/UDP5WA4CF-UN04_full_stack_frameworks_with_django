@@ -1,4 +1,4 @@
-# logo.svg
+# avatar.svg
 
 [SVGcreator](https://svgcreator.com/convert)
 
