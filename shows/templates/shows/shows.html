@@ -19,7 +19,11 @@
                         {{ product.name }}               
                     </div>
                     <p class="pt-1 text-gray-400">
-                        £{{ product.price|floatformat:2 }}
+                        {% if product.price == 0 %}
+                            Free
+                        {% else %}
+                            £{{ product.price|floatformat:2 }}
+                        {% endif %}
                     </p>
                 </product-item>
             {% endfor %}
