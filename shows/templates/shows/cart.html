@@ -11,7 +11,7 @@
             <ul class="divide-y flex flex-col">
                 {% for product in cart %}
                     <li class="flex items-center py-4">
-                        <a class="aspect-square bg-gray-100 block w-36" href="{% url 'showtime' product.product_id %}">
+                        <a class="aspect-square bg-gray-100 block w-36" href="{% url 'showtime' product.id %}">
                             <img src="{{ product.image }}">
                         </a>
                         <div class="flex justify-between pl-6 w-full">
