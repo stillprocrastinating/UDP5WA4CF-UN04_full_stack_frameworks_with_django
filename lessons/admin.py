@@ -1,3 +1,5 @@
 from django.contrib import admin
+from lessons.models import LessonSubscription
 
-# Register your models here.
+
+admin.site.register(LessonSubscription)

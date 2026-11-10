@@ -1,5 +1,8 @@
+from datetime import datetime
 from django.conf import settings
+from django.contrib.auth.models import User
 from django.shortcuts import redirect, render, reverse
+from lessons.models import LessonSubscription
 import stripe
 
 
@@ -32,7 +35,7 @@ def lessons_view(request):
             allowed_payment_method_types=['card'],     # payment_method_types
             mode='subscription',
             success_url=request.build_absolute_uri(reverse("create-subscription")) + f'?session_id={{CHECKOUT_SESSION_ID}}',
-            cancel_url=request.build_absolute_uri(f'{reverse("subscription")}'),
+            cancel_url=request.build_absolute_uri(f'{reverse("lessons")}'),
             customer_email=request.user.email,
             metadata={
                 'user_id': request.user.id
@@ -47,10 +50,37 @@ def lessons_view(request):
 
 
 def create_subscription(request):
+
     checkout_session_id = request.GET.get('session_id', None)
     # create subscription object in database
-    return redirect('my_lessons')
+
+    session = stripe.checkout.Session.retrieve(checkout_session_id)
+    user_id = session.metadata["user_id"]     # session.metadata.get("user_id")
+    user = User.objects.get(id=user_id)
+
+    subscription = stripe.Subscription.retrieve(session.subscription)
+    price = subscription['items']['data'][0]['price']
+    product_id = price['product']
+    product = stripe.Product.retrieve(product_id)
+
+    if checkout_session_id:
+        LessonSubscription.objects.create(
+            user=user,
+            customer_id=session.customer,
+            subscription_id=session.subscription,
+            product_name=product.name,
+            price=price['unit_amount'] / 100,
+            interval=price['recurring']['interval'],
+            date_start=datetime.fromtimestamp(subscription['start_date'])     # datetime.fromtimestamp(subscription['current_period_start'])
+        )
+    return redirect('subscriptions')
 
 
 def my_lessons_view(request):
-    return render(request, 'lessons/my-lessons.html')
+
+    if not request.user.is_authenticated:
+        return redirect('account_login')
+
+    subscription = LessonSubscription.objects.filter(user=request.user).first()
+
+    return render(request, 'lessons/my-lessons.html', {'subscription': subscription})
