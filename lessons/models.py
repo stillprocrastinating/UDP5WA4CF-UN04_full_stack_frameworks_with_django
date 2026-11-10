@@ -1,3 +1,4 @@
+from dateutil.relativedelta import relativedelta
 from django.contrib.auth.models import User
 from django.db import models
 from django.utils.timezone import now
@@ -39,3 +40,16 @@ class LessonSubscription(models.Model):
 
     def __str__(self):
         return f"{self.user.username} - {self.product_name} - Active: {self.is_active}"
+
+    def next_billing_date(self):
+        if self.is_active:
+            if self.interval == 'week':
+                next_billing_date = self.date_start + relativedelta(weeks=1)
+            elif self.interval == 'month':
+                next_billing_date = self.date_start + relativedelta(months=1)
+            else:
+                next_billing_date = self.date_start + relativedelta(years=1)
+        else:
+            next_billing_date = None
+
+        return next_billing_date

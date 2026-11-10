@@ -11,24 +11,45 @@
             <div class="flex items-center justify-between">
                 <div>
                     <div class="font-bold text-2xl">
-                        Basic Plan
+                        {{ subscription.product_name }}
                     </div>
                     <div class="text-gray-500">
-                        Next charge date: December 31, 2025
+                        Next charge date: {{ subscription.next_billing_date|date:"j F Y" }}
                     </div>
                 </div>
                 <div>
                     <div class="font-bold">
-                        $5 / month
+                        £{{ subscription.price }} / {{ subscription.interval }}
                     </div>
                 </div>
             </div>
             <div class="py-4">
-                <div>
-                    - Class timings
+                <div class="font-bold text-indigo-500 text-lg" id="class-timings">
+                    {% if subscription.l_class == 1 %}
+                        Saturdays 09:30 - 10:00
+                    {% elif subscription.l_class == 2 %}
+                        Saturdays 10:00 - 11:00
+                    {% elif subscription.l_class == 3 %}
+                        Saturdays 11:00 - 12:30
+                    {% elif subscription.l_class == 4 %}
+                        Saturdays 12:15 - 13:15
+                    {% elif subscription.l_class == 8 %}
+                        Saturdays 13:00 - 15:00
+                    {% endif %}
                 </div>
-                <div>
-                    - Exams
+                <div class="text-gray-500" id="exams">
+                    Disciplines: 
+                    {% if subscription.l_class == 1 %}
+                        Ballet, tap - grade preliminary
+                    {% elif subscription.l_class == 2 %}
+                        Ballet, tap, freestyle - grade primary
+                    {% elif subscription.l_class == 3 %}
+                        Ballet, tap, freestyle, theatre craft - grade 1
+                    {% elif subscription.l_class == 4 %}
+                        Ballet, tap, freestyle, theatre craft - grade 3
+                    {% elif subscription.l_class == 8 %}
+                        Ballet, tap, freestyle, theatre craft - grade: gold bars
+                    {% endif %}
                 </div>
             </div>
             <div class="flex gap-4 mt-6">
