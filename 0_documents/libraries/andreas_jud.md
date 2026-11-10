@@ -31,7 +31,8 @@ ProductVariationObject = `None` - where images could pull from
 price_in_cent = price_in_pence
 ...
 subscription = lessons
+my_sub = subscriptions
 
 
 https://www.youtube.com/watch?v=i7UYf4erY84&list=PL5E1F5cTSTtRwWj43zbcl5d-e2c1f1M9q&index=7
-timestamp = 6:28
+timestamp = 10:56
