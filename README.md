@@ -10,10 +10,9 @@ This is the final project of Code Institutes' Full Stack Web Developer program v
 
 ## Justification
 
-<!-- Tracking of success rate for PiL course tests; possibility of teaching improvements via targetted understanding of strengths/weaknesses.
+Purchasing of lessons and show recordings from the dance school: Karen Chapmans' School of Dancing. Previously, this has been done via exchange of cash or bank transfer in person. I hope that the option of offering a subscription for recurring lesson payments is helpful to many students/parents who find it difficult to keep track of which lessons they've paid for.
 
-If this project is accepted by the award body as a model they wish to adopt, additional security during user signup will be implemented for testers to avoid explaoitation by non-accredited users. This is likely to include email and tester id verification. -->
-
+If this proves successful, I hope to add school uniform, exam fees, and show tickets purchasing.
 
 ---
 
