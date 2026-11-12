@@ -39,18 +39,18 @@
                 <div x-show="dropdownOpen" x-cloak class="absolute right-0 bg-white text-black shadow rounded-lg w-40 p-2 z-20" x-transition:enter="duration-300 ease-out" x-transition:enter-start="opacity-0 -translate-y-5 scale-90" x-transition:enter-end="opacity-100 translate-y-0 scale-100">
                     <ul class="hoverlist [&>li>a]:justify-end">
                         <li>
+                            <a href="{% url 'subscriptions' %}">
+                                My lessons
+                            </a>
+                        </li>
+                        <li>
                             <a href="{% url 'profile' %}">
-                                My Profile
+                                My profile
                             </a>
                         </li>
                         <li>
                             <a href="{% url 'profile-edit' %}">
-                                Edit Profile
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{% url 'subscriptions' %}">
-                                My lessons
+                                Edit profile
                             </a>
                         </li>
                         <li>
@@ -60,7 +60,7 @@
                         </li>
                         <li>
                             <a href="{% url 'account_logout' %}">
-                                Log Out
+                                Log out
                             </a>
                         </li>
                     </ul>
