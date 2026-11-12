@@ -6,7 +6,7 @@
 
 <div class="max-w-4xl mx-auto px-8 py-24">
     <h1 class="mb-14 text-center">
-        My lesson subscriptions
+        {{ user.profile.name }}s' lesson subscription
     </h1>
     {% if subscription %}
         <div class="bg-gray-100 p-6 rounded-2xl">
@@ -21,7 +21,7 @@
                         </div>
                     {% else %}
                         <div class="text-gray-500">
-                            Cancelled. End date: {{ subscription.date_end|date:"j F Y" }}     <!-- subscription.end_date -->
+                            Cancelled. End date: {{ subscription.date_end|date:"j F Y" }}
                         </div>
                     {% endif %}
                 </div>
@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div class="py-4">
-                <div class="font-bold text-indigo-500 text-lg" id="class-timings">
+                <div class="font-bold text-[#E1426D] text-lg" id="class-timings">
                     {% if subscription.l_class == 1 %}
                         Saturdays 09:30 - 10:00
                     {% elif subscription.l_class == 2 %}
@@ -61,7 +61,7 @@
                 </div>
             </div>
             <div class="flex gap-4 mt-6">
-                <a class="button text-white" href="{% url 'lessons' %}">
+                <a class="button text-white" href="{% url 'lessons-switch' %}">
                     Switch class
                 </a>
                 {% if subscription.is_active and not subscription.end_date %}

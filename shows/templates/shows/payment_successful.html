@@ -6,7 +6,7 @@
 
 <div class="max-w-4xl mx-auto px-8 py-24 text-center">
     <h1>
-        Thanks for your order{% if customer.name %}, {{ customer.name }}{% endif %}!
+        Thanks for your order, {% if customer.name %}{{ customer.name }}{% else %}{{ user.profile.name }}{% endif %}!
     </h1>
     <p class="my-10 text-gray-500">
         The payment was successful
