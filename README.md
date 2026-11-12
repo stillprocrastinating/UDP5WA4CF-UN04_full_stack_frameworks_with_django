@@ -26,15 +26,9 @@ If this proves successful, I hope to add school uniform, exam fees, and show tic
 
 ### Reflections
 
-<!-- If an infinite `while` loop is created by accident, close Visual Studio Code and repoen it; something about being caught in an infitine loop breaks the ability to run the fixed code, despite refreshing the terminal.
+The Heroku build logs are still daunting, but still helpful.
 
-`pip freeze > requirements.txt` and `pip install -r requirements.txt` is awesome functionality.
-
-If something isn't working but the code _seems_ fine, remember to check DevTools for any JavaScript errors (or other errors)! This probably seems trivial, but today I spent most of an hour thinking everything was fine, but something was broken and couldn't see what; then I thought to check DevTools and it told me that the JavaScript wasn't being read... Which, of course, immediately led me to the problem. Small win, but good foundation.
-
-`assert` is a cool error checking tool.
-
-Although the Heroku build logs are daunting, they can be helpful. -->
+Stripe has really evolved, I'm proud of them. The site looks completely different from when the Code Institute course was recorded (I believe, 8 years ago); but also has made changes since 2 years ago according to the YouTube tutorials I was following by [Andreas Jud](https://www.youtube.com/channel/UCNWqvvrhtvXXXkC_Ih2lmpQ).
 
 
 ## Contents
