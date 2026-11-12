@@ -33,8 +33,7 @@ price_in_cent = price_in_pence
 subscription = lessons
 my_sub = subscriptions
 tier = l_class
-current_period_end == canceled_on
 
 
 https://www.youtube.com/watch?v=i7UYf4erY84&list=PL5E1F5cTSTtRwWj43zbcl5d-e2c1f1M9q&index=7
-timestamp = 21:10
+timestamp = 24:00

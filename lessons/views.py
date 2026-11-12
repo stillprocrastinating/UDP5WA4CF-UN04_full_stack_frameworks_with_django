@@ -1,7 +1,8 @@
 from datetime import datetime
 from django.conf import settings
 from django.contrib.auth.models import User
-from django.shortcuts import redirect, render, reverse
+from django.shortcuts import get_object_or_404, redirect, render, reverse
+from django.utils.timezone import now
 from lessons.models import LessonSubscription
 import stripe
 
@@ -34,7 +35,7 @@ def lessons_view(request):
             ],
             allowed_payment_method_types=['card'],     # payment_method_types
             mode='subscription',
-            success_url=request.build_absolute_uri(reverse("create-subscription")) + f'?session_id={{CHECKOUT_SESSION_ID}}',
+            success_url=request.build_absolute_uri(reverse("subscription-create")) + f'?session_id={{CHECKOUT_SESSION_ID}}',
             cancel_url=request.build_absolute_uri(f'{reverse("lessons")}'),
             customer_email=request.user.email,
             metadata={
@@ -49,7 +50,7 @@ def lessons_view(request):
     return render(request, 'lessons/lessons.html', context)
 
 
-def create_subscription(request):
+def subscription_create(request):
 
     checkout_session_id = request.GET.get('session_id', None)
     # create subscription object in database
@@ -84,3 +85,24 @@ def my_lessons_view(request):
     subscription = LessonSubscription.objects.filter(user=request.user).first()
 
     return render(request, 'lessons/my-lessons.html', {'subscription': subscription})
+
+
+def subscription_cancel(request, subscription_id):
+
+    subscription = get_object_or_404(
+        LessonSubscription, subscription_id=subscription_id, user=request.user
+    )
+
+    stripe.Subscription.modify(
+        subscription_id,
+        cancel_at_period_end=True
+    )
+
+    subscription.date_cancelled = now()     # subscription.canceled_at
+
+    stripe_subscription = stripe.Subscription.retrieve(subscription_id)
+    subscription.date_end = datetime.fromtimestamp(stripe_subscription['canceled_at'])     # stripe_subscription['current_period_end']
+
+    subscription.save()
+
+    return redirect('subscriptions')
