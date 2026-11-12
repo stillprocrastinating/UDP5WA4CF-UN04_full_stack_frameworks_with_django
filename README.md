@@ -8,20 +8,19 @@ This is the final project of Code Institutes' Full Stack Web Developer program v
 
 ---
 
+Visit the homepage [here](https://un04-full-stack-frameworks-f3ce56f25fcf.herokuapp.com/).
+
+<!-- ![Am I Responsive](https://github.com/stillprocrastinating/UDP5WA4CF-UN02_interactive_front_end_development/blob/main/assets/README/am_i_responsive.jpg)  
+> _[Screenshot](https://ui.dev/amiresponsive?url=https://stillprocrastinating.github.io/UDP5WA4CF-UN02_interactive_front_end_development) generated using [AmIResponsive](https://ui.dev/amiresponsive)._ -->
+
+---
+
+
 ## Justification
 
 Purchasing of lessons and show recordings from the dance school: Karen Chapmans' School of Dancing. Previously, this has been done via exchange of cash or bank transfer in person. I hope that the option of offering a subscription for recurring lesson payments is helpful to many students/parents who find it difficult to keep track of which lessons they've paid for.
 
 If this proves successful, I hope to add school uniform, exam fees, and show tickets purchasing.
-
----
-
-<!-- Visit the homepage [here](https://un03-back-end-development-743a39d8016b.herokuapp.com/).
-
-![Am I Responsive](https://github.com/stillprocrastinating/UDP5WA4CF-UN02_interactive_front_end_development/blob/main/assets/README/am_i_responsive.jpg)  
-> _[Screenshot](https://ui.dev/amiresponsive?url=https://stillprocrastinating.github.io/UDP5WA4CF-UN02_interactive_front_end_development) generated using [AmIResponsive](https://ui.dev/amiresponsive)._ -->
-
----
 
 
 ### Reflections
@@ -33,11 +32,10 @@ Stripe has really evolved, I'm proud of them. The site looks completely differen
 
 ## Contents
 
-1. [Introduction]  
-    1.1. [Justification]  
-    1.2. [Visit the homepage]  
-    1.3. [AmIResponsive]  
-    1.4. [Reflections]  
+1. [Introduction](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/edit/main/README.md#udp5wa4cf-un04-full-stack-frameworks-with-django)  
+    1.1. [Visit the homepage](https://un04-full-stack-frameworks-f3ce56f25fcf.herokuapp.com/) 
+    1.2. [Justification](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/edit/main/README.md#justification)  
+    1.3. [Reflections](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/edit/main/README.md#reflections)  
 1. [Design]  
     2.1. [User Stories]  
     2.2. [Features]  
