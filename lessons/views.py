@@ -26,24 +26,46 @@ def lessons_view(request):
 
         price_id = request.POST.get('price_id')
 
-        checkout_session = stripe.checkout.Session.create(
-            line_items=[
-                {
-                    'price': price_id,
-                    'quantity': 1,
+        subscription = LessonSubscription.objects.filter(user=request.user).first()
+        if subscription:
+            stripe_subscription = stripe.Subscription.retrieve(subscription.subscription_id)
+            item = stripe_subscription['items']['data'][0]
+            stripe.Subscription.modify(
+                subscription.subscription_id,
+                items=[{
+                    'id': item['id'],
+                    'price': price_id
+                }],
+                cancel_at_period_end=False
+            )
+            price = stripe.Price.retrieve(price_id)
+            product = stripe.Product.retrieve(price['product'])
+            subscription.date_start = now()
+            subscription.product_name = product.name
+            subscription.price = price['unit_amount'] / 100
+            subscription.date_end = None
+            subscription.date_cancelled = None
+            subscription.save()
+            return redirect('subscriptions')
+        else:
+            checkout_session = stripe.checkout.Session.create(
+                line_items=[
+                    {
+                        'price': price_id,
+                        'quantity': 1,
+                    }
+                ],
+                allowed_payment_method_types=['card'],     # payment_method_types
+                mode='subscription',
+                success_url=request.build_absolute_uri(reverse("subscription-create")) + f'?session_id={{CHECKOUT_SESSION_ID}}',
+                cancel_url=request.build_absolute_uri(f'{reverse("lessons")}'),
+                customer_email=request.user.email,
+                metadata={
+                    'user_id': request.user.id
                 }
-            ],
-            allowed_payment_method_types=['card'],     # payment_method_types
-            mode='subscription',
-            success_url=request.build_absolute_uri(reverse("subscription-create")) + f'?session_id={{CHECKOUT_SESSION_ID}}',
-            cancel_url=request.build_absolute_uri(f'{reverse("lessons")}'),
-            customer_email=request.user.email,
-            metadata={
-                'user_id': request.user.id
-            }
-        )
+            )
 
-        return redirect(checkout_session.url, code=303)
+            return redirect(checkout_session.url, code=303)
 
     context = {'subscription': subscription}
 
