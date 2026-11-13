@@ -121,9 +121,9 @@ Please find a comprehensive list of code used from external sources under _0\_do
 
 ### Images
 
-Files can be found under _1\_staticfiles_ > _images_ > _[base](https://github.com/stillprocrastinating/UDP5WA4CF-UN03_back_end_development/tree/main/1_staticfiles/images/base)_.
+Files can be found under _1\_staticfiles_ > _[images](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/tree/main/1_staticfiles/images)_.
 
-The original [example image] was designed by [example] and sourced from [website]. The image indicates that example. I edited the image to example so that it looked more aesthetic in my example.
+The [original images](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/tree/main/0_documents/images/originals) were cropped and edited by me, then saved under _0\_documents_ > _[images](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/tree/main/0_documents/images)_. They were then run through [SVGCreator](https://svgcreator.com/svg-to-favicon/).
 
 
 #### Favicon
