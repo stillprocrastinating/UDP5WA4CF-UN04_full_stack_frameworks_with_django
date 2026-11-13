@@ -36,7 +36,7 @@ Stripe has really evolved, I'm proud of them. The site looks completely differen
     1.1. [Visit the homepage](https://un04-full-stack-frameworks-f3ce56f25fcf.herokuapp.com/)  
     1.2. [Justification](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/edit/main/README.md#justification)  
     1.3. [Reflections](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/edit/main/README.md#reflections)  
-1. [Design]  
+1. [Design](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/blob/main/README.md#design)  
     2.1. [User Stories](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/blob/main/README.md#user-stories)  
     2.2. [Features](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/blob/main/README.md#features)  
     2.3. [ERDs](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/blob/main/README.md#entity-relationship-diagrams)  
