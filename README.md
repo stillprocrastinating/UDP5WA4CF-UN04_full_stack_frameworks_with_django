@@ -38,7 +38,7 @@ Stripe has really evolved, I'm proud of them. The site looks completely differen
     1.3. [Reflections](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/edit/main/README.md#reflections)  
 1. [Design]  
     2.1. [User Stories](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/blob/main/README.md#user-stories)  
-    2.2. [Features]  
+    2.2. [Features](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/blob/main/README.md#features)  
     2.3. [ERDs]  
     2.4. [Wireframes]  
 1. [Credits]  
@@ -85,8 +85,7 @@ _You may click on any screenshot image to be taken to the fullscreen view (and u
 
 | Pages | Sizes | Feature | Presentation |
 |-|-|-|-|
-| All | All | `<noscript>` to handle disabled JavaScript | ![noscript] |
-| 404.html | All | Custom 404 page to handle misdirected urls | ![404] |
+| 404.html | All | Custom 404 page to handle misdirected urls | ![404](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/blob/main/0_documents/README/files/404.jpeg) |
 
 
 ### Entity relationship diagrams
