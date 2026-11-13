@@ -73,7 +73,10 @@ _You may click on any screenshot image to be taken to the fullscreen view (and u
 
 | # | Description | Solution |
 |-|-|-|
-| 1 | As an admin, I want CRUD functionality for example. | ![solution1] |
+| 1 | As an admin, I want CRUD functionality for show ticket one-time purchases. | ![solution_1](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/blob/main/0_documents/README/files/solution_1.jpeg) |
+| 2 | As a user, I want to be able to purchase show tickets. | ![solution_2](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/blob/main/0_documents/README/files/solution_2.jpeg) |
+| 3 | As an admin, I want CRUD functionality for student lesson purchases. | ![solution_3](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/blob/main/0_documents/README/files/solution_3.jpeg) |
+| 4 | As a verified user, I want to be able to purchase a subscription to dance lessons. | ![solution_4](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/blob/main/0_documents/README/files/solution_4.jpeg) |
 
 
 ### Features
