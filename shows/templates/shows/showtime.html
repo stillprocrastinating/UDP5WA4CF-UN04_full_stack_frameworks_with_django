@@ -28,7 +28,7 @@
                 {% if user.is_authenticated %}
                     {% include 'shows/partials/cart-button.html' %}
                 {% else %}
-                    <a class="button !block !rounded-full !bg-black hover:!bg-neutral-500 text-center" href="{% url 'account_login' %}?next={{ request.path }}">
+                    <a class="button !block !rounded-full text-center" href="{% url 'account_login' %}?next={{ request.path }}">
                         Add to cart
                     </a>
                 {% endif %}
