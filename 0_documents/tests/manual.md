@@ -353,135 +353,147 @@
 
 | Datetime | Test | Expectation | Completion |
 |-|-|-|-|
-|| ___question\_list.html___ |||
+|| ___home\_home.html___ |||
 | 2026-11-13 07:45 | Website link click from external | _home\_home.html_ loads | Success |
 ||| CSS loads | Fail |
-||| User is not automatically logged in | Success | <!--
-| 2026-10-06 19:13 | _E1 LO1 MC1_ link click |||
-|| ___question\_detail.html___ |||
-||| _question\_detail.html_ loads | Success |
-||| CSS loads | Success |
-||| JavaScript loads | Success |
+||| Tailwindcss loads | Success |
 ||| User is not automatically logged in | Success |
-| 2026-10-06 19:24 | _Show answers_ link click | CSS background & text colour | Success |
-||| _Answer 2_ CSS font weight & decoration | Success |
-| 2026-10-06 19:25 | _Show answers_ link click | CSS original | Success |
-||| _Answer 2_ CSS original | Success |
-| 2026-10-06 19:26 | _Tests_ link click |||
-|| ___test\_list.html___ |||
-||| _test\_list.html_ loads | Success |
-||| CSS loads | Success |
+| 2026-11-13 08:13 | _Showtime 2026_ link click | YouTube loads video | Success |
+| 2026-11-13 08:15 | _Signup_ link click |||
+|| ___Allauth\_signup.html___ |||
+||| _Allauth\_signup.html_ loads | Success |
+||| CSS loads | Fail |
+||| Tailwindcss loads | Success |
 ||| User is not automatically logged in | Success |
-| 2026-10-06 19:28 | _E1/L PiLAB Oct 25_ link click |||
-|| ___test\_detail.html___ |||
-||| _test\_detail.html_ loads | Success |
-||| CSS loads | Success |
-||| JavaScript loads | Success |
+| 2026-11-13 08:18 | _Browser back_ button click |||
+|| ___home\_home.html___ |||
+||| _home\_home.html_ loads | Success |
+||| CSS loads | Fail |
+||| Tailwindcss loads | Success |
 ||| User is not automatically logged in | Success |
-| 2026-10-06 19:29 | _In history, how has social views affected the formation of legislation in regards to animals?_ link click | No change | Success |
-| 2026-10-06 19:30 | _Home Office_ image link click | [Home Office](https://www.gov.uk/guidance/research-and-testing-using-animals) link opens in a new tab | Success |
-| 2026-10-06 19:30 | _Royal Society of Biology_ image link click | [RSB](https://www.rsb.org.uk/) link opens in a new tab | Success |
-| 2026-10-06 19:30 | _University College London_ image link click | [UCL](https://www.ucl.ac.uk/) link opens in a new tab | Success |
-| 2026-10-06 19:31 | _REAL Rating 1_ image link click | [REAL Good AI](https://www.realgoodai.org/real-rating#:~:text=Specialized%20AI%20tools,sound%2C%20or%20video) link opens in a new tab | Success |
-| 2026-10-06 19:31 | _Signup_ link click |||
-|| ___signup.html___ |||
-||| _signup.html_ loads | Success |
-||| CSS loads | Success |
-||| JavaScript loads | Success |
+| 2026-11-13 08:20 | _Login_ link click |||
+|| ___Allauth\_login.html___ |||
+||| _Allauth\_login.html_ loads | Success |
+||| CSS loads | Fail |
+||| Tailwindcss loads | Success |
 ||| User is not automatically logged in | Success |
-| 2026-10-06 19:33 | _Username_ field click | CSS outline colour (focus) | Success |
-| 2026-10-06 19:33 | _Username_ field type "TestTestTest" | _Username_ field fills with "TestTestTest" | Success |
-| 2026-10-06 19:33 | _Password_ field click | CSS outline colour (focus) | Success |
-| 2026-10-06 19:33 | _Password_ field type "TestPassword" | _Password_ field fills with "************" | Success |
-| 2026-10-06 19:33 | _Password (again)_ field click | CSS outline colour (focus) | Success |
-| 2026-10-06 19:33 | _Password (again)_ field type "TestPassword" | _Password (again)_ field fills with "************" | Success |
-| 2026-10-06 19:33 | _Sign Up »_ link click |||
-|| ___question\_list.html___ |||
-||| _question\_list.html_ loads | Success |
-||| CSS loads | Success |
-||| Message __Successfully signed in as TestTestTest__ | Success |
-| 2026-10-06 19:38 | _Tests_ link click |||
-|| ___test\_list.html___ |||
-||| _test\_list.html_ loads | Success |
-||| CSS loads | Success |
-| 2026-10-06 19:40 | _New_ link click |||
-|| ___test\_form.html___ |||
-||| _test\_form.html_ loads | Success |
-||| CSS loads | Success |
-||| JavaScript loads | Success |
+| 2026-11-13 08:26 | Logged in |||
+|| ___home\_home.html___ |||
+||| _home\_home.html_ loads | Success |
+||| CSS loads | Fail |
+||| Tailwindcss loads | Success |
 ||| User is logged in | Success |
-| 2026-10-06 19:41 | _Id_ field click | CSS outline colour (focus) | Success |
-| 2026-10-06 19:41 | _Id_ field type "TestTest" | _Id_ field fills with "TestTest" | Success |
-| 2026-10-06 19:41 | _Date_ field click | CSS outline colour (focus) | Success |
-| 2026-10-06 19:41 | _Date_ field click | _Date_ field opens calendar | Success |
-| 2026-10-06 19:42 | _Date_ calendar click _Set_ | _Date_ field fills with "06/10/2026" | Success |
-| 2026-10-06 19:43 | _Type_ field click | _Type_ field opens dropdown menu | Success |
-| 2026-10-06 19:43 | _Type_ field click _PiLAB Test_ | _Type_ field fills with "PiLAB Test" | Success |
-| 2026-10-06 19:43 | _Number of participants_ field click | CSS outline colour (focus) | Success |
-| 2026-10-06 19:43 | _Number of participants_ field type "5" | _Number of participants_ field fills with "5" | Success |
-| 2026-10-06 19:44 | _Submit_ link click |||
-|| ___test\_list.html___ |||
-||| _test\_list.html_ loads | Success |
-||| CSS loads | Success |
-||| JavaScript loads | Success |
+| 2026-11-13 08:27 | _Lessons_ nav clicked |||
+|| ___lessons\_lessons.html___ |||
+||| _lessons\_lessons.html_ loads | Success |
+||| CSS loads | Fail |
+||| Tailwindcss loads | Success |
 ||| User is logged in | Success |
-||| Message __New test created__ | Success |
-| 2026-10-06 19:46 | _TestTest_ link click |||
-|| ___test\_detail.html___ |||
-||| _test\_detail.html_ loads | Success |
-||| CSS loads | Success |
-||| JavaScript loads | Success |
+| 2026-11-13 08:29 | _My lessons_ nav clicked |||
+|| ___lessons\_my-lessons.html___ |||
+||| _lessons\_my-lessons.html_ loads | Success |
+||| CSS loads | Fail |
+||| Tailwindcss loads | Success |
 ||| User is logged in | Success |
-| 2026-10-06 19:47 | _New answers_ link click |||
-|| ___answer\_form.html___ |||
-||| _answer\_form.html_ loads | Success |
-||| CSS loads | Success |
-||| JavaScript loads | Success |
+| 2026-11-13 08:30 | _Cancel lesson subscription_ clicked | Page correctly reloads | Success |
+| 2026-11-13 08:31 | _Switch class_ clicked |||
+|| ___lessons\_switch-lesson.html___ |||
+||| _lessons\_switch-lesson.html_ loads | Success |
+||| CSS loads | Fail |
+||| Tailwindcss loads | Success |
 ||| User is logged in | Success |
-| 2026-10-06 19:47 | _Test_ field click | _Test_ field opens dropdown menu | Success |
-| 2026-10-06 19:47 | _Test_ field type "TestTest" | _Test_ field fills with "TestTest" | Success |
-| 2026-10-06 19:47 | _Question_ field click | _Question_ field opens dropdown menu | Success |
-| 2026-10-06 19:47 | _Question_ field click _In history, how has social views affected the formation of legislation in regards to animals?_ | _Question_ field fills with "In history, how has social views affected the formation of legislation in regards to animals?" | Success |
-| 2026-10-06 19:48 | _Submit_ link click |||
-|| ___test\_list.html___ |||
-||| _test\_list.html_ loads | Success |
-||| CSS loads | Success |
-||| JavaScript loads | Success |
+| 2026-11-13 08:33 | _Subscribe_ clicked |||
+|| ___lessons\_my-lessons.html___ |||
+||| _lessons\_my-lessons.html_ correctly loads | Success |
+||| CSS loads | Fail |
+||| Tailwindcss loads | Success |
 ||| User is logged in | Success |
-||| Message __New answer created__ | Success |
-| 2026-10-06 19:48 | _TestTest_ link click |||
-|| ___test\_detail.html___ |||
-||| _test\_detail.html_ loads | Success |
-||| CSS loads | Success |
-||| JavaScript loads | Success |
+| 2026-11-13 08:34 | _Shows_ nav clicked |||
+|| ___shows\_shows.html___ |||
+||| _shows\_shows.html_ loads | Success |
+||| CSS loads | Fail |
+||| Tailwindcss loads | Success |
 ||| User is logged in | Success |
-| 2026-10-06 19:50 | Answer delete icon link click |||
-|| ___answer\_confirm\_delete.html___ |||
-||| _answer\_confirm\_delete.html_ loads | Success |
-||| CSS loads | Success |
+| 2026-11-13 08:35 | _Show_ clicked |||
+|| ___shows\_showtime.html___ |||
+||| _shows\_showtime.html_ correctly loads | Success |
+||| CSS loads | Fail |
+||| Tailwindcss loads | Success |
 ||| User is logged in | Success |
-| 2026-10-06 19:50 | _Confirm delete_ link click |||
-|| ___test\_list.html___ |||
-||| _test\_list.html_ loads | Success |
-||| CSS loads | Success |
-||| JavaScript loads | Success |
+| 2026-11-13 08:36 | _Add to cart_ clicked | Page correctly reloads | Success |
+| 2026-11-13 08:37 | _Cart icon_ nav clicked |||
+|| ___shows\_cart.html___ |||
+||| _shows\_cart.html_ correctly loads | Success |
+||| CSS loads | Fail |
+||| Tailwindcss loads | Success |
 ||| User is logged in | Success |
-||| Message __The answer was deleted__ | Success |
-| 2026-10-06 19:51 | _TestTest_ link click |||
-|| ___test\_detail.html___ |||
-||| _test\_detail.html_ loads | Success |
-||| CSS loads | Success |
-||| JavaScript loads | Success |
+| 2026-11-13 08:38 | _Dropdown_ clicked | Dropdown opens | Success |
+| 2026-11-13 08:38 | _Dropdown number_ clicked | Dropdown correctly closes | Success |
+| 2026-11-13 08:39 | _Remove_ clicked | _shows\_cart.html_ correctly reloads | Success |
+| 2026-11-13 08:39 | _Shows_ nav clicked |||
+|| ___shows\_shows.html___ |||
+||| _shows\_shows.html_ loads | Success |
+||| CSS loads | Fail |
+||| Tailwindcss loads | Success |
 ||| User is logged in | Success |
-| 2026-10-06 19:51 | Test delete icon link click |||
-|| ___test\_confirm\_delete.html___ |||
-||| _test\_confirm\_delete.html_ loads | Success |
-||| CSS loads | Success |
+| 2026-11-13 08:40 | _Show_ clicked |||
+|| ___shows\_showtime.html___ |||
+||| _shows\_showtime.html_ correctly loads | Success |
+||| CSS loads | Fail |
+||| Tailwindcss loads | Success |
 ||| User is logged in | Success |
-| 2026-10-06 19:52 | _Confirm delete_ link click |||
-|| ___test\_list.html___ |||
-||| _test\_list.html_ loads | Success |
-||| CSS loads | Success |
-||| JavaScript loads | Success |
+| 2026-11-13 08:40 | _Add to cart_ clicked | Page correctly reloads | Success |
+| 2026-11-13 08:41 | _Cart icon_ nav clicked |||
+|| ___shows\_cart.html___ |||
+||| _shows\_cart.html_ correctly loads | Success |
+||| CSS loads | Fail |
+||| Tailwindcss loads | Success |
 ||| User is logged in | Success |
-||| Message __The test was deleted__ | Success | -->
+| 2026-11-13 08:41 | _Proceed to checkout_ clicked |||
+|| ___shows\_checkout.html___ |||
+||| _shows\_checkout.html_ correctly loads | Success |
+||| CSS loads | Fail |
+||| Tailwindcss loads | Success |
+||| User is logged in | Success |
+||| form is autofilled | Success |
+| 2026-11-13 08:43 | _Back to cart_ clicked |||
+|| ___shows\_cart.html___ |||
+||| _shows\_cart.html_ correctly loads | Success |
+||| CSS loads | Fail |
+||| Tailwindcss loads | Success |
+||| User is logged in | Success |
+| 2026-11-13 08:44 | _Dropdown_ clicked | Dropdown opens | Success |
+| 2026-11-13 08:44 | _Dropdown number_ clicked | Dropdown correctly closes | Success |
+| 2026-11-13 08:45 | _Proceed to checkout_ clicked |||
+|| ___shows\_checkout.html___ |||
+||| _shows\_checkout.html_ correctly loads | Success |
+||| CSS loads | Fail |
+||| Tailwindcss loads | Success |
+||| User is logged in | Success |
+||| form is autofilled | Success |
+| 2026-11-13 08:45 | _Confirm_ clicked |||
+|| ___stripe___ |||
+||| _stripe_ correctly loads | Success |
+||| CSS loads | Fail |
+||| Tailwindcss loads | Success |
+||| User is logged in | Success |
+||| non-payment information form is autofilled | Success |
+| 2026-11-13 08:46 | _Pay_ clicked |||
+|| ___shows\_payment-success.html___ |||
+||| _shows\_payment-success.html_ correctly loads | Success |
+||| CSS loads | Fail |
+||| Tailwindcss loads | Success |
+||| User is logged in | Success |
+| 2026-11-13 08:49 | _Lessons_ nav clicked |||
+|| ___lessons\_lessons.html___ |||
+||| _lessons\_lessons.html_ loads | Success |
+||| CSS loads | Fail |
+||| Tailwindcss loads | Success |
+||| User is logged in | Success |
+| 2026-11-13 08:50 | _Subscribe_ clicked |||
+|| ___lessons\_my-lessons.html___ |||
+||| _lessons\_my-lessons.html_ correctly loads | Success |
+||| CSS loads | Fail |
+||| Tailwindcss loads | Success |
+||| User is logged in | Success |
+||| Message __Only 1 subscription at a time :) use the switch class button__ | Success |
