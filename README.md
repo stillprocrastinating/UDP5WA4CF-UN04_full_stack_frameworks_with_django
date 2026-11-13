@@ -112,9 +112,11 @@ Please find a comprehensive list of code used from external sources under _0\_do
 
 ### Accessibility
 
-| Object | Ratio | WCAG AA |
-|-|-|-|
-| [--example-dark on --color-white] | example : 1 | pass |
+| Object | Ratio | WCAG AA | Comments |
+|-|-|-|-|
+| [--color-accent on black](https://webaim.org/resources/contrastchecker/?fcolor=E1426D&bcolor=000000) | 5.2 : 1 | pass ||
+| [--color-accent on white](https://webaim.org/resources/contrastchecker/?fcolor=E1426D&bcolor=FFFFFF) | 4.03 : 1 | fail |Only used with large text|
+| [black on white](https://webaim.org/resources/contrastchecker/?fcolor=000000&bcolor=FFFFFF) | 21 : 1 | pass ||
 
 
 ### Images
