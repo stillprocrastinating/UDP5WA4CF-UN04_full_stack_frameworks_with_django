@@ -108,23 +108,14 @@ This website was developed using HTML5, CSS3, JavaScript, and Python in [Visual 
 
 ### Libraries
 
-Please find a comprehensive list of code used from external sources under _0\_documents_ > _[libraries]_.  
-
-Example. <!-- explanatory text: where library code is used, whether it's modified, credit -->
+Please find a comprehensive list of code used from external sources under _0\_documents_ > _[libraries](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/tree/main/0_documents/libraries)_.  
 
 
 ### Accessibility
 
-Please find a comprehensive list of accessibility under _0\_documents_ > _README_ > _files_ > _[accessibility]_.  
-TLDR as follows.
-
 | Object | Ratio | WCAG AA |
 |-|-|-|
 | [--example-dark on --color-white] | example : 1 | pass |
-
-| Object | Method | Description |
-|-|-|-|
-| `.example` | `aria-example` | This is an example |
 
 
 ### Images
