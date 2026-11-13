@@ -42,7 +42,7 @@ Stripe has really evolved, I'm proud of them. The site looks completely differen
     2.3. [ERDs]  
     2.4. [Wireframes]  
 1. [Credits]  
-    3.1. [Development & deployment]  
+    3.1. [Development & deployment](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/edit/main/README.md#development--deployment)  
     3.2. [Libraries]  
     3.3. [Accessibility]  
     3.4. [Images]  
