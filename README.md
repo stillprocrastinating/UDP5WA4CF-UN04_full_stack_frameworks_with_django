@@ -66,7 +66,7 @@ _You may click on any screenshot image to be taken to the fullscreen view (and u
 
 ### User Stories
 
-Please find a comprehensive list of user story goal progress under _0\_documents_ > _README_ > _files_ > _[user_stories]_.  
+Please find a comprehensive list of user story goal progress under _0\_documents_ > _README_ > _files_ > _[user_stories](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/blob/main/0_documents/README/files/user_stories.md)_.  
 TLDR as follows.
 
 _You may click on any screenshot image to be taken to the fullscreen view (and use the browser back button to return here)._
