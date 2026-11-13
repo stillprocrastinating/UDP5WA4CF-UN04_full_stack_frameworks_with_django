@@ -128,9 +128,9 @@ The [original images](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_ful
 
 #### Favicon
 
-Files can be found under _1\_staticfiles_ > _images_ > _[favicon]_.
+Files can be found under _1\_staticfiles_ > _images_ > _[favicon](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/tree/main/1_staticfiles/images/favicon)_.
 
-The favicon was generated from the [example] (sourced from [example]) using [RealFaviconGenerator](https://realfavicongenerator.net).
+The favicon was generated from the [logo.svg](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/blob/main/1_staticfiles/images/logo.svg) using [RealFaviconGenerator](https://realfavicongenerator.net).
 
 
 #### Icons
