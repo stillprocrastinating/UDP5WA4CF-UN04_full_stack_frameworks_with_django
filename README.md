@@ -2,9 +2,9 @@
 
 Hello! Welcome to my README! I hope you have a lovely experience here.
 
-This is the final project of Code Institutes' Full Stack Web Developer program via [University Centre Peterborough](https://www.ucp.ac.uk/) covering, you guessed it, full stack development. I'm making this website in the hopes of making it live and functional to assist my aunts' business.
+This is the final project of Code Institutes' Full Stack Web Developer program via [University Centre Peterborough](https://www.ucp.ac.uk/) covering, you guessed it, full stack development. I'm making this website in the hopes of making it live and functional to assist my aunts' business.<!--
 
-[![pages-build-deployment](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/actions/workflows/pages/pages-build-deployment) <-- this is broken, not sure fixing Heroku live site will fix it either - regarding 2 deployments vs 1 actions [graphite github actions status](https://staging-graphite-splash.vercel.app/guides/github-actions-status)
+[![pages-build-deployment](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/actions/workflows/pages/pages-build-deployment) <-- this is broken, not sure fixing Heroku live site will fix it either - regarding 2 deployments vs 1 actions [graphite github actions status](https://staging-graphite-splash.vercel.app/guides/github-actions-status) -->
 
 ---
 
