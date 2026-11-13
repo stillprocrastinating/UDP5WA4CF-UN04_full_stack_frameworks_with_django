@@ -100,15 +100,15 @@ _You may click on any screenshot image to be taken to the fullscreen view (and u
 Please find a comprehensive list of ERDs under _0\_documents_ > _README_ > _files_ > _[erd](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/blob/main/0_documents/README/files/erd.md)_.  
 TLDR as follows.
 
->`Profile` ➡️ `User` 
+`Profile` :arrow_left: `User` 
 
-____________________ :arrow_down: _______________ :arrow_down:
+_______________ :arrow_down: _______________ :arrow_down:
 
->__________ `ShippingInfo` | `LessonSubscription`
+__________ `ShippingInfo` | `LessonSubscription`
 
-____________________ :arrow_down:
+_______________ :arrow_down:
 
->__________ `CheckoutSession`
+__________ `CheckoutSession`
 
 ---
 
