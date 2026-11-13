@@ -42,10 +42,9 @@ Stripe has really evolved, I'm proud of them. The site looks completely differen
     2.3. [ERDs](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/blob/main/README.md#entity-relationship-diagrams)  
 1. [Credits](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/blob/main/README.md#credits)  
     3.1. [Development & deployment](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/edit/main/README.md#development--deployment)  
-    3.2. [Libraries]  
-    3.3. [Accessibility]  
-    3.4. [Images]  
-    3.5. [Fonts]  
+    3.2. [Libraries](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/blob/main/README.md#libraries)  
+    3.3. [Accessibility](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/edit/main/README.md#accessibility)  
+    3.4. [Images](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/edit/main/README.md#images)  
 1. [Bugs & testing](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/edit/main/README.md#bugs--testing)  
 
 ---
@@ -138,12 +137,6 @@ Files can be found under _0\_documents_ > _README_ > _images_ > _[icons]_.
 
 The example image SVGs were sourced from [website].
 - The example image was [example].
-
-
-### Fonts
-
-- [font]  
-![font demonstration as an image]
 
 ---
 
