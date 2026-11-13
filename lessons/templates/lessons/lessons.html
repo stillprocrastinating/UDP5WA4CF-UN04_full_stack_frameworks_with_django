@@ -23,13 +23,7 @@
                 <form enctype="multipart/form-data" method="post" role="product_page">
                     {% csrf_token %}
                     <input type="hidden" name="price_id" value="{{ subscription.class_1 }}">
-                    {% if subscription and subscription.l_class == 1 %}
-                        {% include 'lessons/partials/if-subscription.html' %}
-                    {% elif subscription and subscription.l_class != 1 %}
-                        {% include 'lessons/partials/elif-subscription.html' %}
-                    {% else %}
-                        {% include 'lessons/partials/else-subscription.html' %}
-                    {% endif %}
+                    {% include 'lessons/partials/else-subscription.html' %}
                 </form>
                 <p class="pt-6">
                     {% include 'lessons/partials/class-timings/l-class-1.html' %}
@@ -51,13 +45,7 @@
                 <form enctype="multipart/form-data" method="post" role="product_page">
                     {% csrf_token %}
                     <input type="hidden" name="price_id" value="{{ subscription.class_2 }}">
-                    {% if subscription and subscription.l_class == 2 %}
-                        {% include 'lessons/partials/if-subscription.html' %}
-                    {% elif subscription and subscription.l_class != 2 %}
-                        {% include 'lessons/partials/elif-subscription.html' %}
-                    {% else %}
-                        {% include 'lessons/partials/else-subscription.html' %}
-                    {% endif %}
+                    {% include 'lessons/partials/else-subscription.html' %}
                 </form>
                 <p class="pt-6">
                     {% include 'lessons/partials/class-timings/l-class-2.html' %}
@@ -79,13 +67,7 @@
                 <form enctype="multipart/form-data" method="post" role="product_page">
                     {% csrf_token %}
                     <input type="hidden" name="price_id" value="{{ subscription.class_3 }}">
-                    {% if subscription and subscription.l_class == 3 %}
-                        {% include 'lessons/partials/if-subscription.html' %}
-                    {% elif subscription and subscription.l_class != 3 %}
-                        {% include 'lessons/partials/elif-subscription.html' %}
-                    {% else %}
-                        {% include 'lessons/partials/else-subscription.html' %}
-                    {% endif %}
+                    {% include 'lessons/partials/else-subscription.html' %}
                 </form>
                 <p class="pt-6">
                     {% include 'lessons/partials/class-timings/l-class-3.html' %}
@@ -107,13 +89,7 @@
                 <form enctype="multipart/form-data" method="post" role="product_page">
                     {% csrf_token %}
                     <input type="hidden" name="price_id" value="{{ subscription.class_4 }}">
-                    {% if subscription and subscription.l_class == 4 %}
-                        {% include 'lessons/partials/if-subscription.html' %}
-                    {% elif subscription and subscription.l_class != 4 %}
-                        {% include 'lessons/partials/elif-subscription.html' %}
-                    {% else %}
-                        {% include 'lessons/partials/else-subscription.html' %}
-                    {% endif %}
+                    {% include 'lessons/partials/else-subscription.html' %}
                 </form>
                 <p class="pt-6">
                     {% include 'lessons/partials/class-timings/l-class-4.html' %}
@@ -135,13 +111,7 @@
                 <form enctype="multipart/form-data" method="post" role="product_page">
                     {% csrf_token %}
                     <input type="hidden" name="price_id" value="{{ subscription.class_8 }}">
-                    {% if subscription and subscription.l_class == 8 %}
-                        {% include 'lessons/partials/if-subscription.html' %}
-                    {% elif subscription and subscription.l_class != 8 %}
-                        {% include 'lessons/partials/elif-subscription.html' %}
-                    {% else %}
-                        {% include 'lessons/partials/else-subscription.html' %}
-                    {% endif %}
+                    {% include 'lessons/partials/else-subscription.html' %}
                 </form>
                 <p class="pt-6">
                     {% include 'lessons/partials/class-timings/l-class-8.html' %}

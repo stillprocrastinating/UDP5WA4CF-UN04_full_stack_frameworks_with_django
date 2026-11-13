@@ -1,5 +1,6 @@
 from datetime import datetime
 from django.conf import settings
+from django.contrib import messages
 from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404, redirect, render, reverse
 from django.utils.timezone import now
@@ -30,6 +31,7 @@ def lessons_view(request):
 
         subscription = LessonSubscription.objects.filter(user=request.user).first()
         if subscription:
+            messages.success(request, "Only 1 subscription at a time :) use the 'switch class' button")
             return redirect('subscriptions')
         else:
             checkout_session = stripe.checkout.Session.create(
