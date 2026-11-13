@@ -40,7 +40,7 @@ Stripe has really evolved, I'm proud of them. The site looks completely differen
     2.1. [User Stories](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/blob/main/README.md#user-stories)  
     2.2. [Features](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/blob/main/README.md#features)  
     2.3. [ERDs](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/blob/main/README.md#entity-relationship-diagrams)  
-1. [Credits]  
+1. [Credits](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/blob/main/README.md#credits)  
     3.1. [Development & deployment](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/edit/main/README.md#development--deployment)  
     3.2. [Libraries]  
     3.3. [Accessibility]  
