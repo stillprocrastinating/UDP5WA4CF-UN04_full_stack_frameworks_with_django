@@ -32,33 +32,22 @@
                 </div>
             </div>
             <div class="py-4">
-                <div class="font-bold text-[#E1426D] text-lg" id="class-timings">
-                    {% if subscription.l_class == 1 %}
-                        Saturdays 09:30 - 10:00
-                    {% elif subscription.l_class == 2 %}
-                        Saturdays 10:00 - 11:00
-                    {% elif subscription.l_class == 3 %}
-                        Saturdays 11:00 - 12:30
-                    {% elif subscription.l_class == 4 %}
-                        Saturdays 12:15 - 13:15
-                    {% elif subscription.l_class == 8 %}
-                        Saturdays 13:00 - 15:00
-                    {% endif %}
-                </div>
-                <div class="text-gray-500" id="exams">
-                    Disciplines: 
-                    {% if subscription.l_class == 1 %}
-                        Ballet, tap - grade preliminary
-                    {% elif subscription.l_class == 2 %}
-                        Ballet, tap, freestyle - grade primary
-                    {% elif subscription.l_class == 3 %}
-                        Ballet, tap, freestyle, theatre craft - grade 1
-                    {% elif subscription.l_class == 4 %}
-                        Ballet, tap, freestyle, theatre craft - grade 3
-                    {% elif subscription.l_class == 8 %}
-                        Ballet, tap, freestyle, theatre craft - grade: gold bars
-                    {% endif %}
-                </div>
+                {% if subscription.l_class == 1 %}
+                    {% include 'lessons/partials/class-timings/l-class-1.html' %}
+                    {% include 'lessons/partials/exams/l-class-1.html' %}
+                {% elif subscription.l_class == 2 %}
+                    {% include 'lessons/partials/class-timings/l-class-2.html' %}
+                    {% include 'lessons/partials/exams/l-class-2.html' %}
+                {% elif subscription.l_class == 3 %}
+                    {% include 'lessons/partials/class-timings/l-class-3.html' %}
+                    {% include 'lessons/partials/exams/l-class-3.html' %}
+                {% elif subscription.l_class == 4 %}
+                    {% include 'lessons/partials/class-timings/l-class-4.html' %}
+                    {% include 'lessons/partials/exams/l-class-4.html' %}
+                {% elif subscription.l_class == 8 %}
+                    {% include 'lessons/partials/class-timings/l-class-8.html' %}
+                    {% include 'lessons/partials/exams/l-class-8.html' %}
+                {% endif %}
             </div>
             <div class="flex gap-4 mt-6">
                 <a class="button text-white" href="{% url 'lessons-switch' %}">

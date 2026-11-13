@@ -35,11 +35,10 @@
             @apply mb-4
         }
         .button, button, [type='submit'], [type='button'] {
-            @apply bg-indigo-600 text-white font-bold px-6 py-4 inline-block 
-            rounded-lg shadow-lg transition-all cursor-pointer
+            @apply bg-[#E1426D] text-black font-bold px-6 py-4 inline-block rounded-lg shadow-lg transition-all cursor-pointer
         }
         .button:hover, button:hover, [type='submit']:hover, [type='button']:hover {
-            @apply bg-indigo-700
+            @apply bg-black text-[#E1426D]
         }
         .button:active, button:active, [type='submit']:active, [type='button']:active {
             @apply scale-95
@@ -101,10 +100,18 @@
         input[name="remember"] {
             @apply w-auto
         }
-        .alert-info { @apply bg-blue-300 }
-        .alert-success { @apply bg-green-400 }
-        .alert-warning { @apply bg-amber-400 }
-        .alert-danger { @apply bg-amber-500 }
+        .alert-info {
+            @apply bg-blue-300
+        }
+        .alert-success {
+            @apply bg-green-400
+        }
+        .alert-warning {
+            @apply bg-amber-400
+        }
+        .alert-danger {
+            @apply bg-amber-500
+        }
     </style>
 
 </head>

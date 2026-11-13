@@ -8,3 +8,4 @@
 | 6 | 2026-11-05 | _checkout-total.html_ `div#product-total-{{product.id}}` is not functioning without page reload ||||
 | 7 | 2026-11-08 | _cart.html_ `<input name="disk">` doesn't function (hoping related to bug#6) | 2026-11-09 | Irrelevant | [main 8d70b25] REMOVE {{ product.disk }} |
 | 8 | 2026-11-08 | __"POST /shows/checkout/ HTTP/1.1" 500__ InvalidRequestError _views.py_ `checkout_session = create_checkout_session(` | 2026-11-09 | Irrelevant | [main 8d70b25] REMOVE {{ product.disk }} |
+| 9 | 2026-11-13 | _lessons.html_ `{% if subscription.l_class %}` does not function as expected ||||

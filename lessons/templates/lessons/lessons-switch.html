@@ -1,0 +1,123 @@
+{% extends 'layouts/blank.html' %}{% load static %}
+
+{% block content %} 
+
+<div class="max-w-4xl mx-auto px-8 xl:px-0 py-24">
+    <h1 class="mb-14 text-center">
+        Switch lesson
+    </h1>
+    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+        <div class="bg-gray-100 p-6 rounded-2xl">
+            <div class="col-span-2 overflow-hidden">
+                <img class="w-full rounded-xl h-auto" src="{% static 'images\class_1.svg' %}">
+            </div>
+            <div class="pt-6">
+                <h2>
+                    Class 1
+                </h2>
+                <p class="text-lg">
+                    £5 / week
+                </p>
+                <form enctype="multipart/form-data" method="post" role="product_page">
+                    {% csrf_token %}
+                    <input type="hidden" name="price_id" value="{{ subscription.class_1 }}"> 
+                    {% include 'lessons/partials/else-subscription.html' %}
+                </form>
+                <p class="pt-6 text-sm">
+                    {% include 'lessons/partials/class-timings/l-class-1.html' %}
+                    {% include 'lessons/partials/exams/l-class-1.html' %}
+                </p>
+            </div>
+        </div>
+        <div class="bg-gray-100 p-6 rounded-2xl">
+            <div class="col-span-2 overflow-hidden">
+                <img class="w-full rounded-xl h-auto" src="{% static 'images\class_2.svg' %}">
+            </div>
+            <div class="pt-6">
+                <h2>
+                    Class 2
+                </h2>
+                <p class="text-lg">
+                    £7 / week
+                </p>
+                <form enctype="multipart/form-data" method="post" role="product_page">
+                    {% csrf_token %}
+                    <input type="hidden" name="price_id" value="{{ subscription.class_2 }}"> 
+                    {% include 'lessons/partials/else-subscription.html' %}
+                </form>
+                <p class="pt-6 text-sm">
+                    {% include 'lessons/partials/class-timings/l-class-1.html' %}
+                    {% include 'lessons/partials/exams/l-class-1.html' %}
+                </p>
+            </div>
+        </div>
+        <div class="bg-gray-100 p-6 rounded-2xl">
+            <div class="col-span-2 overflow-hidden">
+                <img class="w-full rounded-xl h-auto" src="{% static 'images\class_3.svg' %}">
+            </div>
+            <div class="pt-6">
+                <h2>
+                    Class 3
+                </h2>
+                <p class="text-lg">
+                    £9 / week
+                </p>
+                <form enctype="multipart/form-data" method="post" role="product_page">
+                    {% csrf_token %}
+                    <input type="hidden" name="price_id" value="{{ subscription.class_3 }}"> 
+                    {% include 'lessons/partials/else-subscription.html' %}
+                </form>
+                <p class="pt-6 text-sm">
+                    {% include 'lessons/partials/class-timings/l-class-1.html' %}
+                    {% include 'lessons/partials/exams/l-class-1.html' %}
+                </p>
+            </div>
+        </div>
+        <div class="bg-gray-100 p-6 rounded-2xl">
+            <div class="col-span-2 overflow-hidden">
+                <img class="w-full rounded-xl h-auto" src="{% static 'images\class_4.svg' %}">
+            </div>
+            <div class="pt-6">
+                <h2>
+                    Class 4
+                </h2>
+                <p class="text-lg">
+                    £9 / week
+                </p>
+                <form enctype="multipart/form-data" method="post" role="product_page">
+                    {% csrf_token %}
+                    <input type="hidden" name="price_id" value="{{ subscription.class_4 }}"> 
+                    {% include 'lessons/partials/else-subscription.html' %}
+                </form>
+                <p class="pt-6 text-sm">
+                    {% include 'lessons/partials/class-timings/l-class-1.html' %}
+                    {% include 'lessons/partials/exams/l-class-1.html' %}
+                </p>
+            </div>
+        </div>
+        <div class="bg-gray-100 p-6 rounded-2xl">
+            <div class="col-span-2 overflow-hidden">
+                <img class="w-full rounded-xl h-auto" src="{% static 'images\class_8.svg' %}">
+            </div>
+            <div class="pt-6">
+                <h2>
+                    Class 8
+                </h2>
+                <p class="text-lg">
+                    £12 / week
+                </p>
+                <form enctype="multipart/form-data" method="post" role="product_page">
+                    {% csrf_token %}
+                    <input type="hidden" name="price_id" value="{{ subscription.class_8 }}"> 
+                    {% include 'lessons/partials/else-subscription.html' %}
+                </form>
+                <p class="pt-6 text-sm">
+                    {% include 'lessons/partials/class-timings/l-class-1.html' %}
+                    {% include 'lessons/partials/exams/l-class-1.html' %}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

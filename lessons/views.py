@@ -9,16 +9,56 @@ import stripe
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
+LESSONS = {
+    'class_1': 'price_1Ua1kQ643VTaWZ4DNJTNGVbw',
+    'class_2': 'price_1Ub77L643VTaWZ4DD0Y6Hz23',
+    'class_3': 'price_1Ua1lt643VTaWZ4DlP6TPOQC',
+    'class_4': 'price_1Ua1nZ643VTaWZ4DbAk2OnNm',
+    'class_8': 'price_1Ua1vy643VTaWZ4DUzppEGWk'
+}
+
 
 def lessons_view(request):
 
-    subscription = {
-        'class_1': 'price_1Ua1kQ643VTaWZ4DNJTNGVbw',
-        'class_2': 'price_1Ua1gm643VTaWZ4DAcFsZM52',
-        'class_3': 'price_1Ua1lt643VTaWZ4DlP6TPOQC',
-        'class_4': 'price_1Ua1nZ643VTaWZ4DbAk2OnNm',
-        'class_8': 'price_1Ua1vy643VTaWZ4DUzppEGWk'
-    }
+    subscription = LESSONS
+
+    if request.method == 'POST':
+        if not request.user.is_authenticated:
+            return redirect(f"{reverse('account_login')}?next={request.get_full_path()}")
+
+        price_id = request.POST.get('price_id')
+
+        subscription = LessonSubscription.objects.filter(user=request.user).first()
+        if subscription:
+            return redirect('subscriptions')
+        else:
+            checkout_session = stripe.checkout.Session.create(
+                line_items=[
+                    {
+                        'price': price_id,
+                        'quantity': 1,
+                    }
+                ],
+                allowed_payment_method_types=['card'],     # payment_method_types
+                mode='subscription',
+                success_url=request.build_absolute_uri(reverse("subscription-create")) + f'?session_id={{CHECKOUT_SESSION_ID}}',
+                cancel_url=request.build_absolute_uri(f'{reverse("lessons")}'),
+                customer_email=request.user.email,
+                metadata={
+                    'user_id': request.user.id
+                }
+            )
+
+            return redirect(checkout_session.url, code=303)
+
+    context = {'subscription': subscription}
+
+    return render(request, 'lessons/lessons.html', context)
+
+
+def lessons_switch_view(request):
+
+    subscription = LESSONS
 
     if request.method == 'POST':
         if not request.user.is_authenticated:
@@ -69,7 +109,7 @@ def lessons_view(request):
 
     context = {'subscription': subscription}
 
-    return render(request, 'lessons/lessons.html', context)
+    return render(request, 'lessons/lessons-switch.html', context)
 
 
 def subscription_create(request):
@@ -102,7 +142,7 @@ def subscription_create(request):
 def my_lessons_view(request):
 
     if not request.user.is_authenticated:
-        return redirect('account_login')
+        return redirect(f"{reverse('account_login')}?next={request.get_full_path()}")
 
     subscription = LessonSubscription.objects.filter(user=request.user).first()
 
