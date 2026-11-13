@@ -10,9 +10,6 @@ This is the final project of Code Institutes' Full Stack Web Developer program v
 
 Visit the homepage [here](https://un04-full-stack-frameworks-f3ce56f25fcf.herokuapp.com/).
 
-<!-- ![Am I Responsive](https://github.com/stillprocrastinating/UDP5WA4CF-UN02_interactive_front_end_development/blob/main/assets/README/am_i_responsive.jpg)  
-> _[Screenshot](https://ui.dev/amiresponsive?url=https://stillprocrastinating.github.io/UDP5WA4CF-UN02_interactive_front_end_development) generated using [AmIResponsive](https://ui.dev/amiresponsive)._ -->
-
 ---
 
 
