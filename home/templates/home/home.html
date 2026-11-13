@@ -5,9 +5,33 @@
 {% block content %}
 
 <div class="max-w-4xl mx-auto px-8 py-24">
-    <h1>
-        Home
-    </h1>
+    <div class="text-center">
+        <h1 class="mb-100">
+            Welcome to
+            <br>Karen Chapman School of Dancing web app
+        </h1>
+    </div>
+    <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-gray-100 p-6 rounded-2xl">
+            <h2 class="mb-14 text-center">
+                Please enjoy <a class="link" href="https://www.youtube.com/watch?v=ErB3UzAdql8" target="_blank">Showtime 2026</a>!
+            </h2>
+            <p class="mb-50">
+                If you would like to order previous show DVDs, please <a class="link" href="{% url 'account_login' %}">Login</a> or <a class="link" href="{% url 'account_signup' %}?next={% url 'profile-signup' %}">Signup</a> (or bug a friend/family member with an account! <em>haha</em>).
+            </p>
+        </div>
+        <div class="bg-gray-100 p-6 rounded-2xl">
+            <h2 class="mb-14 text-center">
+                Students!
+            </h2>
+            <p>
+                Please <a class="link" href="{% url 'account_signup' %}?next={% url 'profile-signup' %}">Signup</a>, then <a class="link" href="{% url 'account_login' %}">Login</a>, using your student name.
+            </p>
+            <p class="mb-50">
+                <strong>Parents</strong>/guardians, you must create multiple accounts if you are managing multiple students.
+            </p>
+        </div>
+    </div>
 </div>
 
 {% endblock %}
