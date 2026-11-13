@@ -1,6 +1,6 @@
-<!-- >[PiL certification website](https://un03-back-end-development-743a39d8016b.herokuapp.com/)
+>[Karen Chapman School of Dancing](https://un04-full-stack-frameworks-f3ce56f25fcf.herokuapp.com/)
 
-
+<!--
 # Desktop
 
     As this website was designed primarily for PiL course testers, who predominantly work from desktop, testing will focus on desktop functionality (as opposed to the usual phone-first modern development strategy).
@@ -347,16 +347,16 @@
 ||| JavaScript loads | Success |
 ||| User is logged in | Success |
 ||| Message __The test was deleted__ | Success |
-
+-->
 
 # Phone
 
 | Datetime | Test | Expectation | Completion |
 |-|-|-|-|
 || ___question\_list.html___ |||
-| 2026-10-06 19:12 | Website link click from external | _question\_list.html_ loads | Success |
-||| CSS loads | Success |
-||| User is not automatically logged in | Success |
+| 2026-11-13 07:45 | Website link click from external | _home\_home.html_ loads | Success |
+||| CSS loads | Fail |
+||| User is not automatically logged in | Success | <!--
 | 2026-10-06 19:13 | _E1 LO1 MC1_ link click |||
 || ___question\_detail.html___ |||
 ||| _question\_detail.html_ loads | Success |
