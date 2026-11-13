@@ -1,102 +1,79 @@
-<!-- # Entity Relationship Diagram
+# Entity Relationship Diagram
 
 
-## Questions
+## c_users
 
-|Key|Name|Type|
-|-|-|-|
-|PrimaryKey|id|CharField(20)|
-|Slug|slug|AutoSlugField()|
-||learning_objective|IntegerField(choices)|
-||type|IntegerField(choices)|
-||number|IntegerField()|
-||question|TextField()|
-|Not included in this version of the app|image|CloudinaryField('image')|
-||sub_number|IntegerField()|
-||sub_answer_number_individual|IntegerField()|
-||sub_correct_answer_individual|IntegerField()|
-|ForeignKey|author|User, related_name="question_author"|
-
-
-## Tests
+### Profile
 
 |Key|Name|Type|
 |-|-|-|
-|PrimaryKey|id|CharField(20)|
-|Slug|slug|AutoSlugField()|
-||date|DateField()|
-||type|IntegerField(choices)|
-||participant_number|IntegerField()|
-|ForeignKey|tester|User, related_name="tester"|
-|ForeignKey(ManyToMany)|t_questions|Question|
+|OneToOneField|user|User, on_delete=models.CASCADE|
+||image|ImageField(blank=True, null=True, upload_to="avatars/")|
+||displayname|CharField(blank=True, max_length=20, null=True)|
+||info|TextField(blank=True, null=True)|
 
 
-## Answers
+## lessons
+
+### LessonSubscription
 
 |Key|Name|Type|
 |-|-|-|
-|PrimaryKey|id|AutoField()|
-|ForeignKey|question_id|Question, related_name="question_answers"|
-|ForeignKey|test_id|Test, related_name="test_answers"|
-||answer1|IntegerField()|
-||answer2|IntegerField()|
-||answer3|IntegerField(blank=True)|
-||answer4|IntegerField(blank=True)|
-||answer5|IntegerField(blank=True)|
+|ForeignKey|user|User, on_delete=models.CASCADE|
+||customer_id|CharField(max_length=255)|
+||subscription_id|CharField(max_length=255, unique=True)|
+||product_name|CharField(max_length=255)|
+||price|IntegerField()|
+||interval|CharField(max_length=50, default="week")|
+||date_start|DateTimeField(auto_now_add=True)|
+||date_end|DateTimeField(blank=True, null=True)|
+||date_cancelled|DateTimeField(blank=True, null=True)|
+
+
+## shows
+
+### ShippingInfo
+
+|Key|Name|Type|
+|-|-|-|
+|ForeignKey|user|User, blank=True, null=True, on_delete=models.CASCADE|
+||email|EmailField()|
+||phone|CharField(blank=True, max_length=20, null=True)|
+||first_name|CharField(max_length=100)|
+||last_name|CharField(max_length=100)|
+||address|CharField(max_length=255)|
+||address_line_two|CharField(blank=True, max_length=255, null=True)|
+||city|CharField(max_length=100)|
+||postcode|CharField(max_length=10)|
+
+
+### CheckoutSession
+
+|Key|Name|Type|
+|-|-|-|
+||checkout_id|CharField(max_length=255)|
+|ForeignKey|shipping_info|ShippingInfo, blank=True, null=True, on_delete=models.SET_NULL|
+||total_price|DecimalField(blank=True, decimal_places=2, max_digits=10, null=True)|
+||created|DateTimeField(auto_now_add=True)|
+||has_paid|BooleanField(default=False)|
 
 ---
 ---
 
 # Initial plans
 
+## shows
 
-## Entity relationship diagram
+### StripeOnePayment
 
-Master table columns:
-- question_type
-- answer_options
-- correct_answer
-- test_date
-- test_type
-- participant_number
-- correct_choice_frequency
-- incorrect_choice_frequency
-- [calculation] correct_choice_percentage
-- [calculation] incorrect_choice_percentage
-
-
-### Tables
-
-questions
-- id
-- learning_objective
-- type
-- answer_number
-- correct_answer
-
-tests
-- id
-- date
-- type
-- participant_number
-
-~~participants~~ -\-> GDPR
-
-answers
-- id
-- [FK] question_id
-- [FK] test_id
-- option
-- correct_option_frequency
-- incorrect_option_frequency
-
-[CTE] flagging
-- [questions] learning_objective
-- [questions] type
-- [answers] option
-- [answers] correct_option_frequency
-- [answers] incorrect_option_frequency
-- [tests] participant_number
-- [calculation] correct_option_percentage
-- [calculation] incorrect_option_percentage
-- [calculation] flag -->
+|Key|Name|Type|
+|-|-|-|
+|ForeignKey|user|User, on_delete=models.CASCADE|
+||stripe_customer_id|CharField(max_length=255)|
+||stripe_checkout_id|CharField(max_length=255)|
+||stripe_product_id|CharField(max_length=255)|
+||product_name|CharField(max_length=255)|
+||quantity|IntegerField(default=1)|
+||price|DecimalField(decimal_places=2, max_digits=10)|
+||currency|CharField(max_length=3)|
+||has_paid|BooleanField(default=False)|
