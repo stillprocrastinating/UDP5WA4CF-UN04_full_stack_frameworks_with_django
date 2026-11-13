@@ -135,10 +135,9 @@ The favicon was generated from the [logo.svg](https://github.com/stillprocrastin
 
 #### Icons
 
-Files can be found under _0\_documents_ > _README_ > _images_ > _[icons]_.
+Files can be found under _0\_documents_ > _README_ > _[libraries](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/tree/main/0_documents/libraries)_.
 
-The example image SVGs were sourced from [website].
-- The example image was [example].
+The [shopping cart icon](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/blob/main/0_documents/libraries/heroicons.md) was sourced from [Heroicons](https://heroicons.com/) (search "shopping-cart").
 
 ---
 
