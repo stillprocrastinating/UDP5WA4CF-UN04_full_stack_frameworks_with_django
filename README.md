@@ -37,9 +37,10 @@ Stripe has really evolved, I'm proud of them. The site looks completely differen
     1.2. [Justification](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/edit/main/README.md#justification)  
     1.3. [Reflections](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/edit/main/README.md#reflections)  
 1. [Design](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/blob/main/README.md#design)  
-    2.1. [User Stories](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/blob/main/README.md#user-stories)  
-    2.2. [Features](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/blob/main/README.md#features)  
-    2.3. [ERDs](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/blob/main/README.md#entity-relationship-diagrams)  
+    2.1. [User Stories](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/blob/main/README.md#user-stories)
+    2.2. [Wireframes](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/edit/main/README.md#wireframes)
+    2.3. [Features](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/blob/main/README.md#features)  
+    2.4. [ERDs](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/blob/main/README.md#entity-relationship-diagrams)  
 1. [Credits](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/blob/main/README.md#credits)  
     3.1. [Development & deployment](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/edit/main/README.md#development--deployment)  
     3.2. [Libraries](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/blob/main/README.md#libraries)  
@@ -66,6 +67,23 @@ _You may click on any screenshot image to be taken to the fullscreen view (and u
 | 2 | As a user, I want to be able to purchase show tickets. | ![solution_2](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/blob/main/0_documents/README/files/solution_2.jpeg) |
 | 3 | As an admin, I want CRUD functionality for student lesson purchases. | ![solution_3](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/blob/main/0_documents/README/files/solution_3.jpeg) |
 | 4 | As a verified user, I want to be able to purchase a subscription to dance lessons. | ![solution_4](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/blob/main/0_documents/README/files/solution_4.jpeg) |
+
+
+### Wireframes
+
+Please find a comprehensive list of wireframes under _0\_documents_ > _README_ > _[files](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/blob/main/0_documents/README/files)_.  
+TLDR as follows.
+
+_You may click on any screenshot image to be taken to the fullscreen view (and use the browser back button to return here)._
+
+https://wireframe.cc/BHEb8V
+
+| Pages | Wireframe | Presentation |
+|-|-|-|
+| _home.html_ | ![wireframe phone](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/blob/main/0_documents/README/files/home-phone.jpeg) | ![presentation phone](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/blob/main/0_documents/README/files/home-phone-presentation.jpeg) |
+|| ![wireframe](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/blob/main/0_documents/README/files/home.jpeg) | ![presentation](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/blob/main/0_documents/README/files/home-presentation.jpeg) |
+| _shows.html_ | ![wireframe phone](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/blob/main/0_documents/README/files/shows-phone.jpeg) | ![presentation phone](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/blob/main/0_documents/README/files/shows-phone-presentation.jpeg) |
+|| ![wireframe](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/blob/main/0_documents/README/files/shows.jpeg) | ![presentation](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/blob/main/0_documents/README/files/shows-presentation.jpeg) |
 
 
 ### Features
