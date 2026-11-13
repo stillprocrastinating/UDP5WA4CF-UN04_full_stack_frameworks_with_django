@@ -39,8 +39,7 @@ Stripe has really evolved, I'm proud of them. The site looks completely differen
 1. [Design]  
     2.1. [User Stories](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/blob/main/README.md#user-stories)  
     2.2. [Features](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/blob/main/README.md#features)  
-    2.3. [ERDs]  
-    2.4. [Wireframes]  
+    2.3. [ERDs]   
 1. [Credits]  
     3.1. [Development & deployment](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/edit/main/README.md#development--deployment)  
     3.2. [Libraries]  
@@ -53,15 +52,6 @@ Stripe has really evolved, I'm proud of them. The site looks completely differen
 
 
 ## Design
-
-
-### Wireframes
-
-_You may click on any screenshot image to be taken to the fullscreen view (and use the browser back button to return here)._
-
-<!-- | Pages | Features | Wireframe | Presentation |
-|-|-|-|-|
-| index.html | On load | ![wireframe phone](https://github.com/stillprocrastinating/UDP5WA4CF-UN02_interactive_front_end_development/blob/main/assets/README/wireframes/phone.png) | ![presentation phone](https://github.com/stillprocrastinating/UDP5WA4CF-UN02_interactive_front_end_development/blob/main/assets/README/wireframes/presentation_phone.jpeg) | -->
 
 
 ### User Stories
