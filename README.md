@@ -47,7 +47,7 @@ Stripe has really evolved, I'm proud of them. The site looks completely differen
     3.3. [Accessibility]  
     3.4. [Images]  
     3.5. [Fonts]  
-1. [Bugs & testing]  
+1. [Bugs & testing](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/edit/main/README.md#bugs--testing)  
 
 ---
 
@@ -166,12 +166,25 @@ The example image SVGs were sourced from [website].
 
 ## Bugs & testing
 
-Please find a comprehensive list of bug under _0\_documents_ > _README_ > _files_ > _[bugs]_.  
+Please find a comprehensive list of bug reports under _0\_documents_ > _README_ > _files_ > _[bugs]_.  
+Please also find a comprehensive list of testing under _0\_documents_ > _README_ > _tests_ > _[manual](https://github.com/stillprocrastinating/UDP5WA4CF-UN04_full_stack_frameworks_with_django/blob/main/0_documents/tests/manual.md)_.  
 TLDR as follows.
 
 | # | Date IDd | Bug description | Date resolved | Resolution | Commit | Comments |
 |-|-|-|-|-|-|-|
-| 2 | 2026-10-27 | Heroku live site application error log: `code=H14` | 2026-10-28 | Heroku Eco dyno ~~not~~ activated | N/A | Raghav troubleshot this fix (thank you!) |
+| 2 | 2026-10-27 | Heroku live site application error log: `code=H14` | 2026-10-28 | Heroku Eco dyno ~~not~~ activated | N/A | Raghav troubleshot this fix (thank you!) |ars | N/A |
+| 4 | 2026-11-02 | Heroku live site static media not loading ||| Residual bug |
+| 6 | 2026-11-05 | _checkout-total.html_ `div#product-total-{{product.id}}` is not functioning without page reload |||| Residual bug |
+
+| Datetime | Test | Expectation | Completion |
+|-|-|-|-|
+|| ___home\_home.html___ |||
+| 2026-11-13 | Website functionality | Perfect functionality | Fail |
+||| Pages load | Success |
+||| CSS loads | Fail |
+||| Tailwindcss loads | Success |
+||| AllAuth functions | Success |
+||| User is/not automatically logged in, as appropriate | Success |
 
 ---
 
